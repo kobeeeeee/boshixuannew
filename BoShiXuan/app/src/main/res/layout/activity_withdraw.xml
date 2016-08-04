@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/withdraw_gray">
+    <include layout="@layout/layout_title_bar"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginLeft="5dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/withdraw_list_bg1"
+            android:layout_marginTop="10dp"
+            android:id="@+id/relativeLayout2">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="银行 :"
+                android:id="@+id/textView3"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="23.5dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡号 :"
+                android:id="@+id/textView10"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="18dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_below="@+id/textView3"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="选择提现银行卡"
+                android:id="@+id/bankName"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="23.5dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:text=""
+                android:id="@+id/bankNo"
+                android:layout_marginLeft="17dp"
+                android:layout_below="@+id/bankName"
+                android:layout_toRightOf="@+id/textView3"
+                android:layout_toEndOf="@+id/textView3" />
+
+            <RelativeLayout
+                android:id="@+id/arrowLayout"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/arrowImage"
+                    android:src="@drawable/withdraw_arrow"
+                    android:layout_marginTop="23dp"
+                    android:layout_marginRight="27dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/withdraw_list_bg2"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/relativeLayout2"
+            android:layout_marginLeft="5dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout3">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户余额"
+                android:id="@+id/textView11"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="23.5dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00"
+                android:id="@+id/accountBalanceText"
+                android:layout_alignParentTop="true"
+                android:textSize="16sp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="23.5dp"
+                android:textColor="@color/wallet_black"
+                android:layout_toRightOf="@+id/textView11"
+                android:layout_toEndOf="@+id/textView11" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_below="@+id/relativeLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:background="@drawable/withdraw_list_bg3"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout4">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="提现金额"
+                android:id="@+id/textView13"
+                android:layout_marginLeft="19dp"
+                android:layout_marginTop="23.5dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/balanceInput"
+                android:hint="请输入提现金额"
+                android:textSize="13sp"
+                android:layout_marginLeft="19dp"
+                android:background="@null"
+                android:inputType="number"
+                android:layout_marginTop="23.5dp"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView13"
+                android:layout_toEndOf="@+id/textView13" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/withdrawBtn"
+            android:src="@drawable/withdraw_selector"
+            android:clickable="true"
+            android:layout_below="@+id/relativeLayout4"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="34dp" />
+
+    </RelativeLayout>
+</LinearLayout>

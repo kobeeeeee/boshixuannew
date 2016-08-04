@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/include" />
+        <ImageView
+            android:id="@+id/logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/include"
+            android:layout_marginTop="30dp"/>
+         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:text="博时轩名品"
+             android:textSize="18sp"
+             android:textStyle="bold"
+             android:layout_centerHorizontal="true"
+             android:layout_below="@+id/logo"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BO SHI XUAN MING PIN"
+            android:textSize="9sp"
+            android:textStyle="bold"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/logo"
+            android:layout_marginTop="20dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="        博时轩名品是浙江博时轩供应链管理有限公司旗下的实体门店，是中国旧货协会的会员单位。其创始人沈海永先生是浙江知名奢侈品鉴定师，并在2016年被中国二手奢侈品工作委员会聘为    “秘书长”   职务。博时轩名品本着诚信为宗旨，尽心竭力为消费者提供世界顶级的二手奢侈品  “租赁”   “收购”   “寄售”   “护理”   “增值”  服务。"
+            android:layout_below="@+id/logo"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:lineSpacingExtra="7dp"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/link_text_auto"
+            android:textColor="@color/burlywood"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="380dp" />
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="银迅技术支持"
+            android:layout_below="@+id/logo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="400dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Copyright©2015-2016博时轩All Rights Reserved"
+            android:layout_below="@+id/text"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="3dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

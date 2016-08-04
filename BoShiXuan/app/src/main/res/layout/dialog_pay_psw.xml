@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="175dp"
+        android:background="@color/pay_psw_bg">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请输入支付密码"
+            android:textSize="16sp"
+            android:textColor="@color/wallet_black"
+            android:id="@+id/textView83"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView2"
+            android:src="@drawable/dialog_pay_divide_line"
+            android:layout_marginTop="16dp"
+            android:layout_below="@+id/textView83"
+            android:layout_centerHorizontal="true" />
+
+        <EditText
+            android:layout_width="270dp"
+            android:layout_height="44dp"
+            android:text="123456"
+            android:textSize="40sp"
+            android:inputType="numberPassword"
+            android:textScaleX="1.85"
+            android:id="@+id/editText"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/dialog_pay_input_bg"
+            android:layout_below="@+id/imageView2"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/editText"
+            android:layout_centerHorizontal="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:id="@+id/negativeButton"
+                    android:layout_width="115dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="18dp"
+                    android:background="@drawable/dialog_pay_cancel"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginEnd="29dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+
+                <Button
+                    android:layout_width="115dp"
+                    android:layout_height="40dp"
+                    android:layout_marginLeft="18dp"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/dialog_pay_confirm"
+                    android:id="@+id/positiveButton"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</LinearLayout>

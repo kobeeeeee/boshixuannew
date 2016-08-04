@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <ImageView
+            android:layout_width="33dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/payModeImage"
+            android:src="@drawable/recharge_icon_unionpay"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信支付"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:id="@+id/payModeText"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/payModeImage"
+            android:layout_toEndOf="@+id/payModeImage"
+            android:layout_marginLeft="18.5dp"
+            android:layout_marginStart="18.5dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/payModeSelect"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="56.5dp"
+            android:layout_marginEnd="56.5dp"
+            android:src="@drawable/recharge_select"/>
+    </RelativeLayout>
+</LinearLayout>

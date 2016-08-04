@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:id="@+id/newsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="购买理财消息"
+            android:textSize="14sp"
+            android:layout_marginTop="8.5dp"
+            android:textColor="@color/wallet_black"
+            android:id="@+id/newsTitle"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016-07-12 17:30:00"
+            android:textSize="13sp"
+            android:textColor="@color/salmon"
+            android:id="@+id/newsTime"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="尊敬的张小三用户，您在2016-07-12  17:19:00的时候萨达的防晒霜的撒旦王琪琪"
+            android:id="@+id/newsContent"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:layout_marginTop="14dp"
+            android:textColor="@color/bank_add_gray"
+            android:textSize="14sp"
+            android:layout_below="@+id/newsTitle"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+    </RelativeLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView6"
+        android:background="@drawable/news_divide_line"
+        android:layout_gravity="center_horizontal" />
+</LinearLayout>

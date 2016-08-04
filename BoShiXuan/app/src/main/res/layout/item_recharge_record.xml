@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="3.5dp"
+        android:background="@drawable/withdraw_record_bg"
+        android:layout_width="match_parent"
+        android:layout_height="147dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单编号"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="17.5dp"
+            android:id="@+id/textView36"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16.5dp"
+            android:layout_marginStart="16.5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="241246336548546256"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="18.5dp"
+            android:layout_marginLeft="30dp"
+            android:id="@+id/orderNo"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView36"
+            android:layout_toEndOf="@+id/textView36" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值金额"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="27dp"
+            android:id="@+id/textView37"
+            android:layout_below="@+id/textView36"
+            android:layout_alignLeft="@+id/textView36"
+            android:layout_alignStart="@+id/textView36" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10000元"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="28dp"
+            android:id="@+id/rechargeMoney"
+            android:layout_below="@+id/orderNo"
+            android:layout_alignLeft="@+id/orderNo"
+            android:layout_alignStart="@+id/orderNo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="充值方式"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="21dp"
+            android:id="@+id/textView38"
+            android:layout_below="@+id/rechargeMoney"
+            android:layout_alignLeft="@+id/textView37"
+            android:layout_alignStart="@+id/textView37" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="门店现金充值"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:id="@+id/rechargeMode"
+            android:layout_below="@+id/textView37"
+            android:layout_alignLeft="@+id/rechargeMoney"
+            android:layout_alignStart="@+id/rechargeMoney" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016.06.07  11:55:09"
+            android:textColor="@color/white"
+            android:textSize="13sp"
+            android:layout_marginBottom="7.5dp"
+            android:layout_marginRight="6.5dp"
+            android:id="@+id/rechargeTime"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>

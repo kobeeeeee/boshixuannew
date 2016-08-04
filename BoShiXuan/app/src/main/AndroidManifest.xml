@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.yinxun.boshixuan">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- 蓝牙分享所需的权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/launcher_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name="cn.yinxun.boshixuan.activity.MainActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.LoginActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.RegisterActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.LeaseActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.WithdrawActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.BankCardSelectActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.BankCardAddActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.MoreActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.LeaseProductActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.StartupActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.PasswordActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.AboutActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.ProductDetailActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.PasswordManageActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.WithdrawRecordActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.RechargeRecordActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.CertificationActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.MatterRecordActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.ModifyLoginPswActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.ModifyPayPswActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.ForgetPayPswActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.RechargeActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.RechargeMoreActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.MyOrderActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.NewsDetailActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.LeasingProcessActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.DepositActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.RegularBuyActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.PayProtocolActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.AgreementActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.ShopActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.HelpActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.UsehelpActivity">
+        </activity>
+        <activity android:name="cn.yinxun.boshixuan.activity.OrderDetailActivity">
+        </activity>
+        <activity
+            android:name="cn.yinxun.boshixuan.wxapi.WXEntryActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait" />
+        <activity
+        android:name="com.mob.tools.MobUIShell"
+        android:theme="@android:style/Theme.Translucent.NoTitleBar"
+        android:configChanges="keyboardHidden|orientation|screenSize"
+        android:windowSoftInputMode="stateHidden|adjustResize"/>
+    </application>
+</manifest>

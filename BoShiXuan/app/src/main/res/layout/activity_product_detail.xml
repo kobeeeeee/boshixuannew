@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/grid_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/include2" />
+
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:id="@+id/productImage"
+            android:background="@color/white"
+            android:src="@drawable/product_detail_default_image"
+            android:layout_below="@+id/include2"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:background="@drawable/product_detail_input_bg"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/productImage"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout6">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="商品名"
+                android:layout_marginLeft="27.5dp"
+                android:layout_marginTop="25dp"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView24"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="编号"
+                android:layout_marginLeft="27.5dp"
+                android:layout_marginTop="25dp"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView25"
+                android:layout_below="@+id/textView24"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="押金"
+                android:layout_marginLeft="27.5dp"
+                android:layout_marginTop="25dp"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView26"
+                android:layout_below="@+id/textView25"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日租金"
+                android:layout_marginLeft="27.5dp"
+                android:layout_marginTop="25dp"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView27"
+                android:layout_below="@+id/textView26"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="劳力士手表"
+                android:id="@+id/productName"
+                android:textColor="@color/lease_product_gray"
+                android:textSize="14sp"
+                android:layout_marginLeft="50dp"
+                android:layout_alignBottom="@+id/textView24"
+                android:layout_toRightOf="@+id/textView24"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BSX-RLS0001"
+                android:textColor="@color/lease_product_gray"
+                android:textSize="14sp"
+                android:id="@+id/productNo"
+                android:layout_alignBottom="@+id/textView25"
+                android:layout_alignLeft="@+id/productName"
+                android:layout_alignStart="@+id/productName" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/depositText"
+                android:hint="请输入押金"
+                android:textSize="13sp"
+                android:textColorHint="@color/bank_add_gray"
+                android:textColor="@color/darkgoldenrod"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:layout_alignBottom="@+id/textView26"
+                android:layout_alignLeft="@+id/productNo"
+                android:layout_alignStart="@+id/productNo" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:id="@+id/textView28"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignTop="@+id/depositText"
+                android:layout_toRightOf="@+id/productNo"
+                android:layout_toEndOf="@+id/productNo"
+                android:layout_marginLeft="45dp"
+                android:layout_marginStart="45dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/dayRentText"
+                android:hint="请输入日租金"
+                android:textSize="13sp"
+                android:background="@null"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:textColorHint="@color/bank_add_gray"
+                android:layout_alignTop="@+id/textView27"
+                android:layout_alignLeft="@+id/depositText"
+                android:layout_alignStart="@+id/depositText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="元"
+                android:id="@+id/textView29"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignTop="@+id/dayRentText"
+                android:layout_alignLeft="@+id/textView28"
+                android:layout_alignStart="@+id/textView28" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/product_detail_submit_selector"
+            android:clickable="true"
+            android:layout_marginTop="24dp"
+            android:id="@+id/commitOrder"
+            android:layout_below="@+id/relativeLayout6"
+            android:layout_centerHorizontal="true" />
+
+
+    </RelativeLayout>
+</LinearLayout>

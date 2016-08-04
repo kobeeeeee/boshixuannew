@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="55dp">
+
+        <LinearLayout
+            android:id="@+id/ptr_classic_header_rotate_view_header_text"
+            android:layout_width="150dp"
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/ptr_classic_header_rotate_view_header_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#194f2a"
+                android:textSize="11.5sp"
+                android:textAppearance="?android:attr/textAppearance"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/ptr_classic_header_rotate_view_header_last_update"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#999999"
+                android:textSize="10sp"
+                android:visibility="gone"/>
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_below="@+id/ptr_classic_header_rotate_view_header_text">
+
+            <ImageView
+                android:id="@+id/ptr_classic_header_rotate_view"
+                android:layout_width="12dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:src="@mipmap/arrow_bottom" />
+
+            <ProgressBar
+                android:id="@+id/ptr_classic_header_rotate_view_progressbar"
+                android:indeterminateDrawable="@drawable/load_anim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="27dp"
+                android:minWidth="27dp"
+                android:maxWidth="27dp"
+                android:maxHeight="27dp"
+                android:layout_gravity="center"
+                android:indeterminateOnly="true"
+                android:indeterminateBehavior="repeat"/>
+        </FrameLayout>
+    </RelativeLayout>
+
+</LinearLayout>

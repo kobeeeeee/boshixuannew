@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal">
+    <RelativeLayout
+        android:id="@+id/popLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:background="@color/white"
+        android:layout_alignParentBottom="true">
+        <ImageView
+            android:id="@+id/weixin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ssdk_oks_classic_wechat"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="微信"
+            android:layout_below="@+id/weixin"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"/>
+        <ImageView
+            android:id="@+id/friend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ssdk_oks_classic_wechatmoments"
+            android:layout_toRightOf="@+id/weixin"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="朋友圈"
+            android:layout_below="@+id/friend"
+            android:layout_marginLeft="90dp"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

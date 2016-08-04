@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <include layout="@layout/layout_title_bar"/>
+    <RelativeLayout
+        android:background="@drawable/wallet_backgroud"
+        android:layout_width="match_parent"
+        android:layout_height="146dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView7"
+            android:src="@drawable/wallet_user"
+            android:layout_marginTop="81dp"
+            android:layout_marginLeft="28dp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            android:id="@+id/userName"
+            android:layout_marginTop="75dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView7"
+            android:layout_toEndOf="@+id/imageView7" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="187****4453"
+            android:id="@+id/phoneNo"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="13.5dp"
+            android:layout_below="@+id/userName"
+            android:layout_alignLeft="@+id/userName"
+            android:layout_alignStart="@+id/userName" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="wrap_content"
+            android:layout_height="420dp"
+            android:id="@+id/walletListView"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginTop="16dp" />
+    </RelativeLayout>
+
+
+</LinearLayout>

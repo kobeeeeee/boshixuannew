@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/login_background">
+    <include layout="@layout/layout_title_bar"/>
+
+    <RelativeLayout
+        android:id="@+id/login_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_user"
+        android:layout_marginTop="200dp"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_image_user"/>
+        <EditText
+            android:id="@+id/input_user"
+            android:layout_width="203dp"
+            android:layout_height="44dp"
+            android:background="@null"
+            android:layout_toRightOf="@+id/user"
+            android:hint="请输入手机号"
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColorHint="@color/dullgray"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:inputType="phone"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/login_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_input_password"
+        android:layout_below="@+id/login_user"
+        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true">
+        <ImageView
+            android:id="@+id/password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/login_image_password"/>
+        <EditText
+            android:id="@+id/input_password"
+            android:layout_width="203dp"
+            android:layout_height="44dp"
+            android:background="@null"
+            android:layout_toRightOf="@+id/password"
+            android:hint="请输入登录密码"
+            android:gravity="left|center"
+            android:padding="10dp"
+            android:textColorHint="@color/dullgray"
+            android:textSize="13sp"
+            android:textColor="@color/white"
+            android:inputType="textPassword"/>
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/login_press"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/login_password"
+        android:layout_marginTop="17dp"
+        android:layout_centerHorizontal="true"
+        android:clickable="true"
+        android:src="@drawable/login_selector"/>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/login_press">
+        <TextView
+            android:id="@+id/login_forget"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码?"
+            android:textSize="15sp"
+            android:textColor="@color/boldwhite" />
+
+        <ImageView
+            android:id="@+id/login_line"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/login_divide_line"
+            android:layout_toRightOf="@+id/login_forget"
+            android:layout_marginLeft="15dp"/>
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="立即注册"
+            android:textSize="15sp"
+            android:textColor="@color/boldwhite"
+            android:layout_toRightOf="@+id/login_forget"
+            android:layout_marginLeft="30dp"/>
+    </RelativeLayout>
+</RelativeLayout>

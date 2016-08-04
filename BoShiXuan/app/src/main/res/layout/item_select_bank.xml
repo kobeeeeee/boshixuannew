@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="93dp">
+
+    <RelativeLayout
+        android:background="@drawable/bank_card_select_bg"
+        android:layout_width="match_parent"
+        android:layout_height="93dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="21dp"
+            android:layout_marginLeft="12dp"
+            android:text="银行  :"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:id="@+id/textView14"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中国银行"
+            android:id="@+id/bankName"
+            android:textSize="15sp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="21dp"
+            android:textColor="@color/white"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView14"
+            android:layout_toEndOf="@+id/textView14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="卡号  :"
+            android:id="@+id/textView15"
+            android:textSize="15sp"
+            android:layout_marginTop="21dp"
+            android:textColor="@color/white"
+            android:layout_alignParentBottom="true"
+            android:layout_alignLeft="@+id/textView14"
+            android:layout_below="@+id/textView14"
+            android:layout_alignStart="@+id/textView14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="622************9854"
+            android:id="@+id/bankNo"
+            android:textSize="15sp"
+            android:layout_marginTop="21dp"
+            android:textColor="@color/white"
+            android:layout_below="@+id/bankName"
+            android:layout_alignLeft="@+id/bankName"
+            android:layout_alignStart="@+id/bankName" />
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grid_gray">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include
+            layout="@layout/layout_title_bar"
+            android:id ="@+id/include18"/>
+        <RelativeLayout
+            android:background="@drawable/order_detail_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/include18"
+            android:layout_marginTop="7.5dp"
+            android:id="@+id/relativeLayout15">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单号"
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="19dp"
+                android:textSize="17sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView84"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="BSX20160811245"
+                android:layout_marginTop="27dp"
+                android:layout_marginLeft="150dp"
+                android:textSize="13sp"
+                android:textColor="@color/bank_add_gray"
+                android:id="@+id/order_no"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="押金（元）"
+                android:textColor="@color/wallet_black"
+                android:textSize="17sp"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView85"
+                android:layout_below="@+id/textView84"
+                android:layout_alignLeft="@+id/textView84"
+                android:layout_alignStart="@+id/textView84" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="5000.00"
+                android:id="@+id/deposit_money"
+                android:textColor="@color/bank_add_gray"
+                android:layout_marginTop="22dp"
+                android:textSize="13sp"
+                android:layout_below="@+id/textView84"
+                android:layout_alignLeft="@+id/order_no"
+                android:layout_alignStart="@+id/order_no" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="日租金（元）"
+                android:textSize="17sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginTop="20dp"
+                android:id="@+id/textView86"
+                android:layout_below="@+id/textView85"
+                android:layout_alignLeft="@+id/textView85"
+                android:layout_alignStart="@+id/textView85" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="188.00"
+                android:id="@+id/day_rent_money"
+                android:textColor="@color/bank_add_gray"
+                android:textSize="13sp"
+                android:layout_marginTop="25dp"
+                android:layout_below="@+id/deposit_money"
+                android:layout_alignLeft="@+id/deposit_money"
+                android:layout_alignStart="@+id/deposit_money" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="注：目前默认支付方式为账户余额支付"
+            android:textColor="@color/bank_add_gray"
+            android:textSize="13sp"
+            android:id="@+id/textView87"
+            android:layout_below="@+id/relativeLayout15"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/confirmBtn"
+            android:clickable="true"
+            android:src="@drawable/order_detail_selector"
+            android:layout_below="@+id/textView87"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp" />
+    </RelativeLayout>
+</LinearLayout>

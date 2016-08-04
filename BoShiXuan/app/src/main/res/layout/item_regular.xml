@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/regularLayout"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/regular_bg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/regularImage"
+            android:src="@drawable/regular_default_image"
+            android:layout_marginLeft="19.5dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="360长期理财"
+            android:layout_marginLeft="22.5dp"
+            android:layout_marginTop="30dp"
+            android:textColor="@color/wallet_black"
+            android:textSize="16sp"
+            android:id="@+id/regularProductName"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/regularImage"
+            android:layout_toEndOf="@+id/regularImage" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="18.00%"
+            android:textSize="25sp"
+            android:textColor="@color/regular_red"
+            android:layout_marginTop="15.5dp"
+            android:id="@+id/regularProductIncome"
+            android:layout_below="@+id/regularProductName"
+            android:layout_alignLeft="@+id/regularProductName"
+            android:layout_alignStart="@+id/regularProductName" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="七日年化收益"
+            android:textColor="@color/bank_add_gray"
+            android:textSize="12sp"
+            android:layout_marginTop="10dp"
+            android:id="@+id/regularDesc"
+            android:layout_below="@+id/regularProductIncome"
+            android:layout_alignLeft="@+id/regularProductIncome"
+            android:layout_alignStart="@+id/regularProductIncome" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView10"
+            android:src="@drawable/regular_buy_button"
+            android:layout_marginRight="43dp"
+            android:layout_marginEnd="43dp"
+            android:layout_alignTop="@+id/regularProductIncome"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="360天"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:id="@+id/regularProductDay"
+            android:layout_alignBottom="@+id/regularProductName"
+            android:layout_alignRight="@+id/imageView10"
+            android:layout_alignEnd="@+id/imageView10" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000元起投"
+            android:textColor="@color/font_for_black"
+            android:textSize="14sp"
+            android:id="@+id/regularProductMin"
+            android:layout_alignTop="@+id/regularDesc"
+            android:layout_alignRight="@+id/imageView10"
+            android:layout_alignEnd="@+id/imageView10" />
+    </RelativeLayout>
+</LinearLayout>

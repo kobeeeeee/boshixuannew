@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/include4" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请绑定持卡人本人的银行卡"
+            android:id="@+id/textView16"
+            android:textSize="14sp"
+            android:textColor="@color/bank_add_gray"
+            android:layout_below="@+id/include4"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <RelativeLayout
+            android:background="@drawable/bank_add_list"
+            android:layout_width="match_parent"
+            android:layout_height="123dp"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/include4"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout5">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="持卡人 ："
+                android:id="@+id/textView17"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginTop="10dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="卡号 ："
+                android:id="@+id/textView18"
+                android:layout_marginLeft="20dp"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/textView17"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/userName"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_alignTop="@+id/textView17"
+                android:layout_alignLeft="@+id/bankNo"
+                android:layout_alignStart="@+id/bankNo" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bankNo"
+                android:hint="请输入银行卡卡号"
+                android:background="@null"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginLeft="65dp"
+                android:layout_alignTop="@+id/textView18"
+                android:layout_toRightOf="@+id/textView18"
+                android:layout_toEndOf="@+id/textView18" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="银行 ："
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:id="@+id/textView19"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/bankNo"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bankName"
+                android:hint="请选择银行"
+                android:background="@null"
+                android:textSize="16sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/bankNo"
+                android:layout_alignLeft="@+id/bankNo"
+                android:layout_alignStart="@+id/bankNo" />
+            <RelativeLayout
+                android:id="@+id/expansionLayout"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/bankNo"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="3dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/bank_add_arrow"/>
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/BankAddBtn"
+            android:src="@drawable/bank_add_selector"
+            android:clickable="true"
+            android:layout_below="@+id/relativeLayout5"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp" />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/productLayout"
+        android:layout_marginLeft="2.5dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/productImage"
+            android:background="@color/white"
+            android:src="@drawable/lease_product_default"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:background="@drawable/lease_product_bg"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_below="@+id/productImage"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:text="商品名"
+                android:id="@+id/productName"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textSize="14sp"
+                android:textColor="@color/wallet_black"
+                android:layout_marginLeft="7.5dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="可租"
+                android:id="@+id/isLeaseText"
+                android:textColor="@color/lease_product_gray"
+                android:textSize="13sp"
+                android:layout_marginRight="7.5dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

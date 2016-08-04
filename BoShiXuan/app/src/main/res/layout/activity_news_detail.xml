@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white_for_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/include13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="16sp"
+            android:textColor="@color/font_for_black"
+            android:layout_marginTop="5dp"
+            android:id="@+id/newsTitle"
+            android:layout_below="@+id/include13"
+            android:layout_centerHorizontal="true" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/include13"
+            android:layout_marginTop="39dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/news_detail_bg"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout11">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/newsContent"
+                android:textColor="@color/font_for_black"
+                android:textSize="13sp"
+                android:layout_marginLeft="19dp"
+                android:layout_marginRight="19dp"
+                android:layout_marginTop="22.5dp"
+                android:lineSpacingExtra="11dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/wallet_black"
+            android:textSize="13sp"
+            android:layout_marginTop="11dp"
+            android:id="@+id/newsTime"
+            android:layout_below="@+id/relativeLayout11"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+</LinearLayout>

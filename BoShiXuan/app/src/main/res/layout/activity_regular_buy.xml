@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:background="@color/white_for_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <include layout="@layout/layout_title_bar"
+            android:id="@+id/include15" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/regular_header_bg"
+            android:layout_below="@+id/include15"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout13">
+
+
+            <RelativeLayout
+                android:id="@+id/leftLayout"
+                android:layout_width="123dp"
+                android:layout_height="55dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1.00元"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/regularBuyMin"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="起投金额"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:id="@+id/textView75"
+                    android:layout_below="@+id/regularBuyMin"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rightLayout"
+                android:layout_width="120dp"
+                android:layout_height="55dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="30天"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/regularBuyDay"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="理财期限"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:id="@+id/textView76"
+                    android:layout_below="@+id/regularBuyDay"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_alignParentTop="true"
+                android:layout_toLeftOf="@+id/rightLayout"
+                android:layout_toStartOf="@+id/rightLayout"
+                android:layout_toRightOf="@+id/leftLayout"
+                android:layout_toEndOf="@+id/leftLayout">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="15.0%"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/regularYearIncome"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="年化收益"
+                    android:textColor="@color/white"
+                    android:textSize="11sp"
+                    android:id="@+id/textView77"
+                    android:layout_below="@+id/regularYearIncome"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:background="@drawable/regular_bg"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_below="@+id/relativeLayout13"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout14">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="账户余额"
+                android:layout_marginLeft="35dp"
+                android:textColor="@color/font_for_black"
+                android:textSize="16sp"
+                android:layout_marginTop="15dp"
+                android:id="@+id/textView78"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.00元"
+                android:textColor="@color/wallet_black"
+                android:textSize="16sp"
+                android:id="@+id/accountBalance"
+                android:layout_alignTop="@+id/textView78"
+                android:layout_toRightOf="@+id/textView78"
+                android:layout_toEndOf="@+id/textView78"
+                android:layout_marginLeft="81.5dp"
+                android:layout_marginStart="81.5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="购买金额"
+                android:textColor="@color/font_for_black"
+                android:textSize="16sp"
+                android:layout_marginTop="43dp"
+                android:id="@+id/textView80"
+                android:layout_below="@+id/textView78"
+                android:layout_alignLeft="@+id/textView78"
+                android:layout_alignStart="@+id/textView78" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="33.5dp"
+                android:layout_marginLeft="10.5dp"
+                android:background="@drawable/regular_input_bg"
+                android:hint="请输入购买金额"
+                android:gravity="center"
+                android:textColorHint="@color/regular_input_gray"
+                android:textSize="12sp"
+                android:inputType="number"
+                android:id="@+id/inputBuyMoney"
+                android:layout_below="@+id/accountBalance"
+                android:layout_toRightOf="@+id/textView78"
+                android:layout_toEndOf="@+id/textView78" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="32.5dp"
+                android:layout_marginTop="31dp"
+                android:src="@drawable/regular_check_normal"
+                android:id="@+id/regularCheckbox"
+                android:layout_below="@+id/textView80"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同意以下所有条款"
+                android:textColor="@color/wallet_black"
+                android:textSize="14sp"
+                android:layout_marginLeft="11dp"
+                android:layout_marginTop="27.5dp"
+                android:id="@+id/textView79"
+                android:layout_below="@+id/inputBuyMoney"
+                android:layout_toRightOf="@+id/regularCheckbox"
+                android:layout_toEndOf="@+id/regularCheckbox" />
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:src="@drawable/regular_buy_selector"
+            android:id="@+id/regularBuyBtn"
+            android:layout_below="@+id/relativeLayout14"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/regular_server_protocol"
+            android:lineSpacingExtra="5dp"
+            android:layout_marginTop="34dp"
+            android:layout_marginLeft="18.5dp"
+            android:layout_marginRight="20.5dp"
+            android:id="@+id/textView81"
+            android:layout_below="@+id/regularBuyBtn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:src="@drawable/regular_check_protocol"
+            android:id="@+id/checkProtocolBtn"
+            android:layout_below="@+id/textView81"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
+</LinearLayout>

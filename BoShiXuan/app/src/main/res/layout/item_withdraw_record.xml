@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_marginTop="3.5dp"
+        android:background="@drawable/withdraw_record_bg"
+        android:layout_width="match_parent"
+        android:layout_height="147dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现金额"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="17.5dp"
+            android:id="@+id/textView36"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="16.5dp"
+            android:layout_marginStart="16.5dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="￥800.00元"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="18.5dp"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/withdrawMoney"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/textView36"
+            android:layout_toEndOf="@+id/textView36" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现时间"
+            android:textSize="16sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="24dp"
+            android:id="@+id/textView37"
+            android:layout_below="@+id/textView36"
+            android:layout_alignLeft="@+id/textView36"
+            android:layout_alignStart="@+id/textView36" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016.06.07     11:55:09"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:layout_marginTop="25dp"
+            android:id="@+id/withdrawTime"
+            android:layout_below="@+id/withdrawMoney"
+            android:layout_alignLeft="@+id/withdrawMoney"
+            android:layout_alignStart="@+id/withdrawMoney" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现银行卡"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginTop="15dp"
+            android:id="@+id/textView38"
+            android:layout_below="@+id/textView37"
+            android:layout_alignLeft="@+id/textView37"
+            android:layout_alignStart="@+id/textView37" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="622************2115"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:layout_marginTop="21dp"
+            android:id="@+id/withdrawBankNo"
+            android:layout_below="@+id/withdrawTime"
+            android:layout_alignLeft="@+id/withdrawTime"
+            android:layout_alignStart="@+id/withdrawTime" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="工商银行"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:layout_marginBottom="7.5dp"
+            android:layout_marginRight="6.5dp"
+            android:id="@+id/withdrawBankName"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</LinearLayout>
