@@ -10,31 +10,45 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cn.yinxun.boshixuan.R;
+import cn.yinxun.boshixuan.util.CommonUtil;
+import cn.yinxun.boshixuan.util.LogUtil;
+import cn.yinxun.boshixuan.util.SecurityPasswordUtil;
 
 public class PaypswDialog extends Dialog {
     private EditText editText;
     private Button positiveButton, negativeButton;
     private TextView title;
+    private Context mContext;
+    SecurityPasswordUtil mUtil;
 
     public PaypswDialog(Context context) {
         super(context, R.style.Dialog);
+        this.mContext = context;
         setCustomDialog();
     }
 
     private void setCustomDialog() {
-        View mView = LayoutInflater.from(getContext()).inflate(R.layout.dialog_pay_psw, null);
-        title = (TextView) mView.findViewById(R.id.textView83);
-        editText = (EditText) mView.findViewById(R.id.editText);
-        positiveButton = (Button) mView.findViewById(R.id.positiveButton);
-        negativeButton = (Button) mView.findViewById(R.id.negativeButton);
-        super.setContentView(mView);
+        View view = LayoutInflater.from(getContext()).inflate(R.layout.dialog_pay_psw, null);
+        positiveButton = (Button) view.findViewById(R.id.positiveButton);
+        negativeButton = (Button) view.findViewById(R.id.negativeButton);
+        this.mUtil = new SecurityPasswordUtil(this.mContext,view);
+        this.mUtil.setOnEditTextListener(new SecurityPasswordUtil.OnEditTextListener() {
+            @Override
+            public void inputComplete(int state, String password) {
+                LogUtil.i(this,"输入完成");
+            }
+        });
+        super.setContentView(view);
     }
 
-    public View getEditText(){
-        return editText;
-    }
 
-    public String getText() { return  editText.getText().toString();}
+    public String getText() {
+        String text = "";
+        if(this.mUtil != null) {
+            text = this.mUtil.getEditNumber();
+        }
+        return  text;
+    }
 
     @Override
     public void setContentView(int layoutResID) {
@@ -52,13 +66,17 @@ public class PaypswDialog extends Dialog {
      * @param listener
      */
     public void setOnPositiveListener(View.OnClickListener listener){
-        positiveButton.setOnClickListener(listener);
+        if(positiveButton != null) {
+            positiveButton.setOnClickListener(listener);
+        }
     }
     /**
      * 取消键监听器
      * @param listener
      */
     public void setOnNegativeListener(View.OnClickListener listener){
-        negativeButton.setOnClickListener(listener);
+        if(negativeButton != null) {
+            negativeButton.setOnClickListener(listener);
+        }
     }
 }

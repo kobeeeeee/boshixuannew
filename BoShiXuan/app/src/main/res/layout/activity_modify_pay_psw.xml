@@ -39,7 +39,7 @@
             android:padding="10dp"
             android:background="@drawable/modify_psw_input"
             android:layout_below="@+id/include8"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:textSize="13sp"
             android:layout_toRightOf="@+id/textView33"
             android:layout_toEndOf="@+id/textView33" />
@@ -71,7 +71,7 @@
             android:layout_marginTop="30.5dp"
             android:layout_below="@+id/oldPswText"
             android:layout_marginRight="19dp"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:layout_alignParentRight="true"
             android:layout_alignLeft="@+id/oldPswText"
             android:layout_alignStart="@+id/oldPswText" />
@@ -102,7 +102,7 @@
             android:padding="10dp"
             android:layout_marginTop="30.5dp"
             android:layout_alignParentRight="true"
-            android:inputType="textPassword"
+            android:inputType="numberPassword"
             android:layout_marginRight="19dp"
             android:layout_below="@+id/newPswText"
             android:layout_alignLeft="@+id/newPswText"

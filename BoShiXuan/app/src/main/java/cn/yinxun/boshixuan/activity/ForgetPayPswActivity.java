@@ -106,6 +106,11 @@ public class ForgetPayPswActivity extends BaseActivity{
             CommonUtil.showToast("请输入验证码",ForgetPayPswActivity.this);
             return;
         }
+        boolean result=confirmPassword.matches("[0-9]+");
+        if(!result || confirmPassword.length() != 6) {
+            CommonUtil.showToast("请输入六位纯数字密码",ForgetPayPswActivity.this);
+            return;
+        }
         if(!verifyCode.equals(ForgetPayPswActivity.this.mVerifyCode)) {
             CommonUtil.showToast("验证码错误，请重新输入",ForgetPayPswActivity.this);
             return;

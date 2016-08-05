@@ -29,25 +29,94 @@
             android:layout_below="@+id/textView83"
             android:layout_centerHorizontal="true" />
 
-        <EditText
+        <LinearLayout
             android:layout_width="270dp"
             android:layout_height="44dp"
-            android:text="123456"
-            android:textSize="40sp"
-            android:inputType="numberPassword"
-            android:textScaleX="1.85"
-            android:id="@+id/editText"
             android:layout_marginTop="16dp"
             android:background="@drawable/dialog_pay_input_bg"
             android:layout_below="@+id/imageView2"
-            android:layout_centerHorizontal="true" />
+            android:layout_centerHorizontal="true"
+            android:id="@+id/editLayout" >
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/firstEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/secondEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/firstEditText"
+                android:layout_toEndOf="@+id/firstEditText" />
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/thirdEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/secondEditText"
+                android:layout_toEndOf="@+id/secondEditText" />
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/forthEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/thirdEditText"
+                android:layout_toEndOf="@+id/thirdEditText" />
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/fifthEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/forthEditText"
+                android:layout_toEndOf="@+id/forthEditText" />
+
+            <EditText
+                android:layout_width="45dp"
+                android:layout_height="44dp"
+                android:id="@+id/sixthEditText"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="numberPassword"
+                android:maxLength="1"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/fifthEditText"
+                android:layout_toEndOf="@+id/fifthEditText" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_marginTop="16dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/editText"
+            android:layout_below="@+id/editLayout"
             android:layout_centerHorizontal="true">
 
             <RelativeLayout
