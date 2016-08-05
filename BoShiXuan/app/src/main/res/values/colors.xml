@@ -166,6 +166,6 @@
     <color name="font_for_black">#666666</color><!--灰黑色字体 -->
     <color name="graph_gray">#9B9A9B</color><!--折线图灰色字体 -->
     <color name="regular_input_gray">#999999</color><!--定期购买灰色字体 -->
-    <color name="pay_psw_bg">#80eeeeee</color><!--钱包画面灰色 -->
+    <color name="pay_psw_bg">#ddeeeeee</color><!--钱包画面灰色 -->
 
 </resources>

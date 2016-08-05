@@ -72,7 +72,7 @@ public class OrderDetailActivity extends BaseActivity{
                         String userId = userInfoBean.getCustId();
                         String userPhone = userInfoBean.getCustMobile();
                         //传入参数
-                        String payPsw = payDialog.getText();
+                        String payPsw = payDialog.getPassword();
                         LogUtil.i(this,"支付密码输入 = " + payPsw);
                         Map<String,Object> map = new HashMap<>();
                         map.put("goods_order_id",OrderDetailActivity.this.mOrderId);

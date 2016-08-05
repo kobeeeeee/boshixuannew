@@ -47,8 +47,6 @@ public class LoginActivity extends BaseActivity {
     public NetWorkCallBack mNetWorkCallBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        initUserInfoBean();
-        LogUtil.init(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
@@ -76,31 +74,6 @@ public class LoginActivity extends BaseActivity {
         loginButton.setOnClickListener(new MyOnClickListener(TYPE_LOGIN));
         forgetTextView.setOnClickListener(new MyOnClickListener(TYPE_FORGET));
        this.mNetWorkCallBack = new NetWorkCallBack();
-    }
-    /**
-     * 当进入登录画面时，初始化userBean的信息
-     */
-    public void initUserInfoBean() {
-        UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
-        userInfoBean.setSysType("1");
-
-        String systemType = Build.VERSION.RELEASE;
-        userInfoBean.setSysVersion(systemType);
-
-        PackageManager manager;
-        String applicationVersion = "";
-        manager = getPackageManager();
-        PackageInfo info = null;
-        try {
-            info = manager.getPackageInfo(getPackageName(),0);
-            applicationVersion = String.valueOf(info.versionCode);
-        } catch (PackageManager.NameNotFoundException e) {
-            e.printStackTrace();
-        }
-        userInfoBean.setAppVersion(applicationVersion);
-
-        String no = android.os.Build.VERSION.RELEASE;
-        userInfoBean.setSysTerNo(no);
     }
     class MyOnClickListener implements  View.OnClickListener {
         public int mType;

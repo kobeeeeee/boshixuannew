@@ -131,4 +131,35 @@ public class UserInfoBean {
     public String getIdentity() {
         return identity;
     }
+
+    //清空bean类里面的所有数据
+    public static void destroyBean(){
+        userInfoBean = null;
+        //商户ID
+        custId = "";
+        //用户手机号
+        custMobile = "";
+        //客户端类型
+        sysType = "";
+        //操作系统版本号
+        sysVersion = "";
+        //App版本号
+        appVersion = "";
+        //设备固件号
+        String sysTerNo = "";
+        //交易日期
+        txnDate = "";
+        //交易时间
+        txnTime = "";
+        //密码
+        password = "";
+        //支付密码
+        payPsw = "";
+        //用户名称
+        userName = "";
+        //身份证号码
+        identity="";
+
+        isVerity ="";
+    }
 }

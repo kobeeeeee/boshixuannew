@@ -132,7 +132,7 @@ public class WithdrawActivity extends BaseActivity {
           public void onClick(View v) {
               payDialog.dismiss();
               //传入参数
-              String payPsw = payDialog.getText();
+              String payPsw = payDialog.getPassword();
               LogUtil.i(this,"支付密码输入 = " + payPsw);
               Map<String,Object> map = new HashMap<>();
               map.put("fetch_money",fetchMoney);

@@ -14,6 +14,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import cn.yinxun.boshixuan.R;
 import cn.yinxun.boshixuan.adapter.MainTabFragmentAdapter;
+import cn.yinxun.boshixuan.bean.UserInfoBean;
 import cn.yinxun.boshixuan.fragment.HomeFragment;
 import cn.yinxun.boshixuan.fragment.NewsFragment;
 import cn.yinxun.boshixuan.fragment.SettingFragment;
@@ -78,5 +79,11 @@ public class MainActivity extends BaseActivity {
             return false;
         }
         return true;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        UserInfoBean.destroyBean();
     }
 }

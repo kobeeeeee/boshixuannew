@@ -26,6 +26,7 @@ import cn.yinxun.boshixuan.network.model.RegularBuyResponse;
 import cn.yinxun.boshixuan.util.CommonUtil;
 import cn.yinxun.boshixuan.util.LogUtil;
 import cn.yinxun.boshixuan.view.CustomDialog;
+import cn.yinxun.boshixuan.view.PaypswDialog;
 
 /**
  * Created by Administrator on 2016/7/17 0017.
@@ -172,33 +173,46 @@ public class RegularBuyActivity extends BaseActivity{
         });
     }
     private void confirmBuy() {
-        Intent intent = getIntent();
-        String productId = intent.getStringExtra("productId");
-        String productName = intent.getStringExtra("productName");
+        final PaypswDialog dialog = new PaypswDialog(this);
+        dialog.setOnNegativeListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+        dialog.show();
+        dialog.setOnPositiveListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = getIntent();
+                String productId = intent.getStringExtra("productId");
+                String productName = intent.getStringExtra("productName");
 
-        UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
-        String userId = userInfoBean.getCustId();
-        String userPhone = userInfoBean.getCustMobile();
-        String userName = userInfoBean.getUserName();
-        String payPsw = userInfoBean.getPayPsw();
-        String financeMoney = this.mInputBuyMoney.getText().toString();
-        String investDay = this.mRegularBuyDay.getText().toString();
-        String investMoney = this.mRegularBuyMin.getText().toString();
-        String interestRate = this.mRegularYearIncome.getText().toString();
+                UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
+                String userId = userInfoBean.getCustId();
+                String userPhone = userInfoBean.getCustMobile();
+                String userName = userInfoBean.getUserName();
+                String payPsw = dialog.getPassword();
+                String financeMoney = RegularBuyActivity.this.mInputBuyMoney.getText().toString();
+                String investDay = RegularBuyActivity.this.mRegularBuyDay.getText().toString();
+                String investMoney = RegularBuyActivity.this.mRegularBuyMin.getText().toString();
+                String interestRate = RegularBuyActivity.this.mRegularYearIncome.getText().toString();
 
-        //传入参数
-        Map<String,Object> map = new HashMap<>();
-        map.put("product_id",productId);
-        map.put("finance_money",financeMoney);
-        map.put("pay_passwd",payPsw);
-        map.put("product_name",productName);
-        map.put("interest_rate",interestRate);
-        map.put("user_name",userName);
-        map.put("invest_days",investDay);
-        map.put("user_id",userId);
-        map.put("user_phone",userPhone);
-        RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_PURCHASE_FINANCE,map,RegularBuyActivity.this.mNetWorkCallBack, RegularBuyResponse.class);
+                //传入参数
+                Map<String,Object> map = new HashMap<>();
+                map.put("product_id",productId);
+                map.put("finance_money",financeMoney);
+                map.put("pay_passwd",payPsw);
+                map.put("product_name",productName);
+                map.put("interest_rate",interestRate.substring(0,interestRate.length()-1));
+                map.put("user_name",userName);
+                map.put("invest_days",investDay.substring(0,investDay.length()-1));
+                map.put("user_id",userId);
+                map.put("user_phone",userPhone);
+                RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_PURCHASE_FINANCE,map,RegularBuyActivity.this.mNetWorkCallBack, RegularBuyResponse.class);
 
+            }
+        });
     }
     private class NetWorkCallBack implements RequestListener {
 
@@ -215,6 +229,8 @@ public class RegularBuyActivity extends BaseActivity{
             if(object instanceof RegularBuyResponse) {
                 RegularBuyResponse regularBuyResponse = (RegularBuyResponse)object;
                 LogUtil.i(this,"regularBuyResponse = " + regularBuyResponse);
+                CommonUtil.showToast("购买成功",RegularBuyActivity.this);
+                finish();
             }
 
             if (object instanceof AccountBalanceResponse) {

@@ -1,6 +1,8 @@
 package cn.yinxun.boshixuan.util;
 
 import android.content.Context;
+import android.os.Handler;
+import android.os.Looper;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.method.PasswordTransformationMethod;
@@ -96,23 +98,16 @@ public class SecurityPasswordUtil {
         five_pwd.setOnKeyListener(onkeylistener);
         six_pwd.setOnKeyListener(onkeylistener);
 
-        Timer timer = new Timer();
-        timer.schedule(
-                new TimerTask()
-                       {
-
-                           public void run()
-                           {
-                               //当出现支付窗口时弹出软键盘
-                               one_pwd.requestFocus();
-                               InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
-                               imm.showSoftInput(one_pwd,0);
-//                             imm.showSoftInputFromInputMethod(one_pwd.getWindowToken(),0);
-                           }
-
-                       },
-                POP_SOFT_KEYBOARD_TIME);
-
+        new Handler().postDelayed(new Runnable(){
+            @Override
+            public void run() {
+                //当出现支付窗口时弹出软键盘
+                one_pwd.requestFocus();
+                InputMethodManager imm = (InputMethodManager)context.getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.showSoftInput(one_pwd,0);
+//              imm.showSoftInputFromInputMethod(one_pwd.getWindowToken(),0);
+            }
+        }, POP_SOFT_KEYBOARD_TIME);
     }
     /**
      * 字符改变监听

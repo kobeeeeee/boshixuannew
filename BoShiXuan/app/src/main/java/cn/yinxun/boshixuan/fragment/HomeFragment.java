@@ -113,9 +113,15 @@ public class HomeFragment extends BaseFragment{
         initHeader();
         //初始化监听器
         initClickListener();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         //获取账户余额
         getData();
     }
+
     private void getData() {
         Map<String,Object> map = new HashMap<>();
         UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
@@ -126,7 +132,6 @@ public class HomeFragment extends BaseFragment{
         RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_BALANCE_STATISTIC,map,HomeFragment.this.mNetWorkCallBack, AccountBalanceResponse.class);
 
 
-        this.mNetWorkCallBack = new NetWorkCallBack();
         Map<String,Object> realNameMap = new HashMap<>();
         RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_USER_INFO_QUERY,realNameMap,HomeFragment.this.mNetWorkCallBack, UserInfoResponse.class);
     }

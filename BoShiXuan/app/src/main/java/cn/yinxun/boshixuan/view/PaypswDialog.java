@@ -1,5 +1,6 @@
 package cn.yinxun.boshixuan.view;
 
+import android.app.Activity;
 import android.app.Dialog;
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -18,10 +19,10 @@ public class PaypswDialog extends Dialog {
     private EditText editText;
     private Button positiveButton, negativeButton;
     private TextView title;
-    private Context mContext;
+    private Activity mContext;
     SecurityPasswordUtil mUtil;
 
-    public PaypswDialog(Context context) {
+    public PaypswDialog(Activity context) {
         super(context, R.style.Dialog);
         this.mContext = context;
         setCustomDialog();
@@ -42,7 +43,7 @@ public class PaypswDialog extends Dialog {
     }
 
 
-    public String getText() {
+    public String getPassword() {
         String text = "";
         if(this.mUtil != null) {
             text = this.mUtil.getEditNumber();
