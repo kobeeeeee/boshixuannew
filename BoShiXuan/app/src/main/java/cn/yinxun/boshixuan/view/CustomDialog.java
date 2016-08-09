@@ -6,6 +6,8 @@ package cn.yinxun.boshixuan.view;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.text.TextUtils;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
@@ -34,6 +36,7 @@ public class CustomDialog extends Dialog {
         private View contentView;
         private DialogInterface.OnClickListener positiveButtonClickListener;
         private DialogInterface.OnClickListener negativeButtonClickListener;
+        private DialogInterface.OnKeyListener keyCliCkListener;
 
         public Builder(Context context) {
             this.context = context;
@@ -118,7 +121,10 @@ public class CustomDialog extends Dialog {
             this.negativeButtonClickListener = listener;
             return this;
         }
-
+        public Builder setOnKeyListener(DialogInterface.OnKeyListener listener) {
+            this.keyCliCkListener = listener;
+            return this;
+        };
         public CustomDialog create() {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -129,6 +135,7 @@ public class CustomDialog extends Dialog {
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
             // set the dialog title
             ((TextView) layout.findViewById(R.id.title)).setText(title);
+            View divideLine = layout.findViewById(R.id.divideLine);
             // set the confirm button
             if (positiveButtonText != null) {
                 ((Button) layout.findViewById(R.id.positiveButton))
@@ -165,6 +172,9 @@ public class CustomDialog extends Dialog {
                 layout.findViewById(R.id.negativeButton).setVisibility(
                         View.GONE);
             }
+            if(keyCliCkListener != null) {
+                this.setOnKeyListener(keyCliCkListener);
+            }
             // set the content message
             if (message != null) {
                 ((TextView) layout.findViewById(R.id.message)).setText(message);
@@ -175,6 +185,9 @@ public class CustomDialog extends Dialog {
                         .removeAllViews();
                 ((LinearLayout) layout.findViewById(R.id.content))
                         .addView(contentView, new LayoutParams(LayoutParams.FILL_PARENT,LayoutParams.FILL_PARENT));
+            }
+            if(TextUtils.isEmpty(negativeButtonText) || TextUtils.isEmpty(positiveButtonText)) {
+                divideLine.setVisibility(View.GONE);
             }
             dialog.setContentView(layout);
             return dialog;

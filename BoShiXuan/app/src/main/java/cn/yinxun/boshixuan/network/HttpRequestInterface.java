@@ -11,6 +11,8 @@ public interface HttpRequestInterface {
 
     String post(int tag, String url, KeyValuePair keyValuePair,Type modelType);
 
+    String post(int tag,String url,String parameter,Type modelType);
+
     String uploadFile(int tag, String url, byte[] bytes, String mimeType, String fileName);
 
     boolean downloadFile(String url, String dirPath, String fileName);

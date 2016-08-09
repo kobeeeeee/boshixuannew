@@ -209,7 +209,7 @@ public class RegularBuyActivity extends BaseActivity{
                 map.put("invest_days",investDay.substring(0,investDay.length()-1));
                 map.put("user_id",userId);
                 map.put("user_phone",userPhone);
-                RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_PURCHASE_FINANCE,map,RegularBuyActivity.this.mNetWorkCallBack, RegularBuyResponse.class);
+                RequestManager.getInstance().post(Config.URL, Config.BSX_PURCHASE_FINANCE,map,RegularBuyActivity.this.mNetWorkCallBack, RegularBuyResponse.class);
 
             }
         });

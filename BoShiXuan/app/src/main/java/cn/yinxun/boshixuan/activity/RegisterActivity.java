@@ -136,10 +136,10 @@ public class RegisterActivity extends BaseActivity {
                         CommonUtil.showToast("验证码不能为空",RegisterActivity.this);
                         break;
                     }
-                    if(!CommonUtil.checkPassword(password)){
-                        CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",RegisterActivity.this);
-                        break;
-                    }
+//                    if(!CommonUtil.checkPassword(password)){
+//                        CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",RegisterActivity.this);
+//                        break;
+//                    }
                     if(!password.equals(confirmPassword)){
                         CommonUtil.showToast("两次输入密码不一致",RegisterActivity.this);
                         break;

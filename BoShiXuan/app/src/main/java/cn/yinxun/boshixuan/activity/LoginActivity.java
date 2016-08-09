@@ -99,10 +99,10 @@ public class LoginActivity extends BaseActivity {
                         CommonUtil.showToast("请输入密码",LoginActivity.this);
                         break;
                     }
-                    if(!CommonUtil.checkPassword(password)){
-                        CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",LoginActivity.this);
-                        break;
-                    }
+//                    if(!CommonUtil.checkPassword(password)){
+//                        CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",LoginActivity.this);
+//                        break;
+//                    }
                     String encryptPasswd = CommonUtil.md5(password);
                     LogUtil.i(this,"登录加密密码 = " + encryptPasswd);
                     //根据输入的用户名、密码调用接口校验用户名密码是否正确

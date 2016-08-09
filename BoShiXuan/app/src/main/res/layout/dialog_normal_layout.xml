@@ -59,6 +59,7 @@
                 android:textSize="50px"
                 android:textColor="@color/dodgerblue"/>
             <View
+                android:id="@+id/divideLine"
                 android:layout_width="1px"
                 android:layout_height="match_parent"
                 android:background="#ffd0d0d0"

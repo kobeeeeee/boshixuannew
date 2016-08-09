@@ -7,6 +7,9 @@ public class Config {
     //根路径
     public static String ROOT_URL = "http://218.5.74.172:7890/bosx";
     public static String SLASH = "/";
+    public static String PAY_URL = "http://58.61.153.24";
+    public static String PAY_PORT = "12250";
+    public static String PAY_COLON = ":";
     //路径
     public static String URL = ROOT_URL + SLASH + "app";
     /**

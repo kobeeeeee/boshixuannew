@@ -11,6 +11,8 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.RequestBody;
 import cn.yinxun.boshixuan.util.LogUtil;
+import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * Created by Administrator on 2016/7/9 0009.
@@ -89,6 +91,25 @@ public class HttpRequestOKHttpImpl  implements HttpRequestInterface {
 
     }
 
+    @Override
+    public String post(int tag, String url, String parameter, Type modelType){
+        MediaType mediaType = MediaType.parse("text/html");
+        RequestBody requestBody = RequestBody.create(mediaType,parameter);
+        Request request = new Request.Builder()
+                .url(url)
+                .tag(tag)
+                .post(requestBody)
+                .build();
+        try {
+            Response response = client.newCall(request).execute();
+            ResponseBody responseBody = response.body();
+            String resp = responseBody.string();
+            return resp;
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
     @Override
     public String uploadFile(int tag, String url, byte[] bytes, String mimeType, String fileName) {

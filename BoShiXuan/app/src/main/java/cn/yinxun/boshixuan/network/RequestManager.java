@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import java.lang.reflect.Type;
 import java.util.Map;
 
+import cn.yinxun.boshixuan.config.Config;
 import cn.yinxun.boshixuan.util.CommonUtil;
 import cn.yinxun.boshixuan.util.LogUtil;
 
@@ -170,7 +171,49 @@ public class RequestManager {
         };
         mAsyncTask.execute();
     }
+    public void post(final int tag,final String url, final String parameter, final RequestListener listener,final Type modelType) {
+        mAsyncTask = new AsyncTask() {
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                listener.onBegin();
+            }
 
+            @Override
+            protected Object doInBackground(Object[] params) {
+                LogUtil.i(TAG, url.toString());
+                LogUtil.i(TAG, parameter.toString());
+                String response = "";
+                try {
+                    response = httpRequest.post(tag, url, parameter, modelType);
+                    LogUtil.i(TAG, "" + response);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+                return response;
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                String response = (String) o;
+                LogUtil.i(getClass().getSimpleName(), "response" + response);
+                if (response != null) {
+                    try {
+                        LogUtil.d(this, response);
+
+                    } catch (Exception e) {
+                        listener.onFailure("程序发生意外情况");
+                        e.printStackTrace();
+                    }
+
+                } else {
+                    listener.onFailure("网络连接异常");
+                }
+            }
+        };
+        mAsyncTask.execute();
+    }
     public void get(final int tag, final String url, final RequestListener listener, final Type modelType) {
 //        if (!NetUtil.isConnected(FansApplication.context)) {
 //            Toast.makeText(FansApplication.context, Message.NET_MESSAGE_ERROR, Toast.LENGTH_SHORT).show();
@@ -272,5 +315,7 @@ public class RequestManager {
     public void post(String action, RequestListener listener, Type modelType) {
         //post(0, "", action, null, listener, modelType);
     }
-
+    public void post(String url,String parameter, RequestListener listener, Type modelType){
+        post(0, url, parameter, listener, modelType);
+    }
 }

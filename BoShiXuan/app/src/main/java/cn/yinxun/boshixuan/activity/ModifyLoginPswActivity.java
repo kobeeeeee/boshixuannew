@@ -90,10 +90,10 @@ public class ModifyLoginPswActivity extends BaseActivity{
                     CommonUtil.showToast("两次输入密码不一致",ModifyLoginPswActivity.this);
                     return;
                 }
-                if(!CommonUtil.checkPassword(confirmPassword)){
-                    CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",ModifyLoginPswActivity.this);
-                    return;
-                }
+//                if(!CommonUtil.checkPassword(confirmPassword)){
+//                    CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",ModifyLoginPswActivity.this);
+//                    return;
+//                }
 
                 String phoneNo = userInfoBean.getCustMobile();
                 //传入参数

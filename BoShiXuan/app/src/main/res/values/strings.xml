@@ -9,6 +9,8 @@
     <string name="nomore_loading">没有了</string>
     <string name="refresh_done">刷新完成</string>
     <string name="listview_header_last_time">上次更新时间：</string>
+    <!-- WXPayEntryActivity -->
+    <string name="pay_result_callback_msg" formatted="false">微信支付结果：%s</string>
     <string name="regular_server_protocol">
         购买须知\n
         1）到账时间：提款后1小时内到账，金额无上限。\n

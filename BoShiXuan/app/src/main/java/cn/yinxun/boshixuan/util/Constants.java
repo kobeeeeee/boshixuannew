@@ -5,4 +5,5 @@ package cn.yinxun.boshixuan.util;
  */
 public class Constants {
     public static String KEY_DESKEY = "DESKey";
+    public static String WX_APP_ID = "wx6659d548b8ea7095";
 }
