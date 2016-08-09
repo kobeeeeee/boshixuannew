@@ -137,7 +137,7 @@ public class HomeFragment extends BaseFragment{
     }
     private void initHeader() {
         this.mHeader.setVisibility(View.VISIBLE);
-        this.mHeader.setText("博时轩品名");
+        this.mHeader.setText("博时轩名品");
     }
     //初始化轮播图资源
     private void initBannerRes() {

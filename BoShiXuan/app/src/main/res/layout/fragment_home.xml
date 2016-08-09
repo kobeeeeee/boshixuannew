@@ -146,175 +146,127 @@
             </LinearLayout>
         </RelativeLayout>
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_rent"
+            android:id="@+id/leaseImage"
             android:layout_below="@+id/relativeLayout"
-            android:layout_centerHorizontal="true">
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="33.5dp" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="租赁"
+            android:textSize="17sp"
+            android:layout_marginTop="10.5dp"
+            android:layout_marginLeft="54dp"
+            android:id="@+id/textView5"
+            android:layout_below="@+id/leaseImage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/withdrawImage"
+            android:src="@drawable/home_withdraw"
+            android:layout_alignTop="@+id/leaseImage"
+            android:layout_centerHorizontal="true" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/home_rent"
-                        android:id="@+id/leaseImage"
-                        android:layout_marginTop="33dp"
-                        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提现"
+            android:textSize="17sp"
+            android:id="@+id/textView6"
+            android:layout_alignTop="@+id/textView5"
+            android:layout_below="@+id/withdrawImage"
+            android:layout_centerHorizontal="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="租赁"
-                        android:textSize="17sp"
-                        android:layout_marginTop="10.5dp"
-                        android:id="@+id/textView5"
-                        android:layout_below="@+id/leaseImage"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/shopImage"
+            android:src="@drawable/home_shop"
+            android:layout_marginRight="40dp"
+            android:layout_alignTop="@+id/withdrawImage"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旗舰店"
+            android:textSize="17sp"
+            android:layout_marginRight="44.5dp"
+            android:layout_alignTop="@+id/textView6"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/withdrawImage"
-                        android:layout_marginTop="33dp"
-                        android:src="@drawable/home_withdraw"
-                        android:layout_centerHorizontal="true" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_deposit"
+            android:id="@+id/depositImage"
+            android:layout_below="@+id/textView5"
+            android:layout_alignLeft="@+id/leaseImage"
+            android:layout_alignStart="@+id/leaseImage"
+            android:layout_marginTop="15dp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="提现"
-                        android:layout_marginTop="10.5dp"
-                        android:textSize="17sp"
-                        android:id="@+id/textView6"
-                        android:layout_below="@+id/withdrawImage"
-                        android:layout_centerHorizontal="true"/>
-                </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="押金宝"
+            android:textSize="17sp"
+            android:layout_marginTop="10.5dp"
+            android:layout_marginLeft="44.5dp"
+            android:id="@+id/textView7"
+            android:layout_below="@+id/depositImage"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
 
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/orderImage"
+            android:src="@drawable/home_order"
+            android:layout_alignTop="@+id/depositImage"
+            android:layout_centerHorizontal="true" />
 
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/shopImage"
-                        android:layout_marginTop="33dp"
-                        android:src="@drawable/home_shop"
-                        android:layout_centerHorizontal="true" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="订单"
+            android:textSize="17sp"
+            android:id="@+id/textView9"
+            android:layout_alignTop="@+id/textView7"
+            android:layout_below="@+id/orderImage"
+            android:layout_centerHorizontal="true" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="旗舰店"
-                        android:textSize="17sp"
-                        android:layout_marginTop="10.5dp"
-                        android:id="@+id/textView7"
-                        android:layout_below="@+id/shopImage"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
-            </LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/home_help"
+            android:id="@+id/helpImage"
+            android:layout_marginRight="40dp"
+            android:layout_alignTop="@+id/orderImage"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
-            <LinearLayout
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_gravity="center_horizontal">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/home_deposit"
-                        android:id="@+id/depositImage"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="押金宝"
-                        android:textSize="17sp"
-                        android:layout_marginTop="12dp"
-                        android:id="@+id/textView8"
-                        android:layout_below="@+id/depositImage"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/orderImage"
-                        android:src="@drawable/home_order"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="订单"
-                        android:textSize="17sp"
-                        android:layout_marginTop="12dp"
-                        android:id="@+id/textView9"
-                        android:layout_below="@+id/orderImage"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src="@drawable/home_help"
-                        android:id="@+id/helpImage"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="使用帮助"
-                        android:textSize="17sp"
-                        android:layout_marginTop="12dp"
-                        android:id="@+id/textView69"
-                        android:layout_below="@+id/helpImage"
-                        android:layout_centerHorizontal="true" />
-                </RelativeLayout>
-            </LinearLayout>
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="使用帮助"
+            android:textSize="17sp"
+            android:layout_marginRight="35.5dp"
+            android:id="@+id/textView8"
+            android:layout_alignTop="@+id/textView9"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
 
     </RelativeLayout>

@@ -76,6 +76,7 @@ public class WithdrawActivity extends BaseActivity {
         });
     }
     private void initOnClick() {
+        this.mBankName.setOnClickListener(new MyOnClickListener(TYPE_SELECT));
         this.mArrowLayout.setOnClickListener(new MyOnClickListener(TYPE_SELECT));
         this.mWithdrawBtn.setOnClickListener(new MyOnClickListener(TYPE_WITHDRAW));
         this.mNetWorkCallBack = new NetWorkCallBack();

@@ -111,10 +111,6 @@ public class LoginActivity extends BaseActivity {
                     map.put("user_passwd",encryptPasswd);
                     RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_USER_LOGIN,map,LoginActivity.this.mNetWorkCallBack,LoginResponse.class);
 
-//                    //TODO 测试登录用
-//                    intent = new Intent(LoginActivity.this,MainActivity.class);
-//                    startActivity(intent);
-//                    LoginActivity.this.finish();
                     break;
                 case TYPE_FORGET:
                     intent = new Intent(LoginActivity.this,PasswordActivity.class);

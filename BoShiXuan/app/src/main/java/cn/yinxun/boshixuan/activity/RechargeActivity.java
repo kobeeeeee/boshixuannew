@@ -5,6 +5,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
@@ -18,6 +19,9 @@ import com.loopj.android.http.RequestParams;
 import com.tencent.mm.sdk.modelpay.PayReq;
 import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -45,10 +49,14 @@ import cn.yinxun.boshixuan.R;
 import cn.yinxun.boshixuan.adapter.RechargePayModeAdapter;
 import cn.yinxun.boshixuan.bean.UserInfoBean;
 import cn.yinxun.boshixuan.config.Config;
+import cn.yinxun.boshixuan.event.BaseEvent;
+import cn.yinxun.boshixuan.event.FinanceBuyEvent;
 import cn.yinxun.boshixuan.network.PayResponse;
 import cn.yinxun.boshixuan.network.RequestListener;
 import cn.yinxun.boshixuan.network.RequestManager;
+import cn.yinxun.boshixuan.network.WeChatRechargeResponse;
 import cn.yinxun.boshixuan.network.model.AccountBalanceResponse;
+import cn.yinxun.boshixuan.network.model.WeChatOrderNoResponse;
 import cn.yinxun.boshixuan.util.CommonUtil;
 import cn.yinxun.boshixuan.util.Constants;
 import cn.yinxun.boshixuan.util.LogUtil;
@@ -89,6 +97,7 @@ public class RechargeActivity extends BaseActivity{
     private List<Integer> mPayModeImageSrcList;
     private int mPosition = 0;
     public JSONObject mJSONObject;
+    public String mPutinNum;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,6 +107,9 @@ public class RechargeActivity extends BaseActivity{
         initHeader();
         getData();
         initListView();
+        if(!EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().register(this);
+        }
     }
     private void initListView(){
         initListViewData();
@@ -147,8 +159,7 @@ public class RechargeActivity extends BaseActivity{
                 }
                 switch (RechargeActivity.this.mPosition){
                     case TYPE_WEIXIN_PAY:
-                        payByWeiXin();
-//                        CommonUtil.showToast("接口测试中，敬请期待",RechargeActivity.this);
+                       getOrderNo();
                         break;
                     case TYPE_ALI_PAY:
                         CommonUtil.showToast("暂未开通，敬请期待",RechargeActivity.this);
@@ -164,7 +175,18 @@ public class RechargeActivity extends BaseActivity{
             }
         });
     }
-    private void payByWeiXin(){
+    private void getOrderNo() {
+        Map<String,Object> map = new HashMap<>();
+        UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
+        String userId = userInfoBean.getCustId();
+        String userPhone = userInfoBean.getCustMobile();
+        map.put("user_id",userId);
+        map.put("user_phone",userPhone);
+        map.put("wechat_type","1");
+        RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_WECHAT_RECHARGE,map,RechargeActivity.this.mNetWorkCallBack, WeChatOrderNoResponse.class);
+
+    }
+    private void payByWeiXin(String orderNo){
         UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
         String userId = userInfoBean.getCustId();
         String userName = userInfoBean.getUserName();
@@ -176,7 +198,7 @@ public class RechargeActivity extends BaseActivity{
         Date date = new Date();
         map.put("txdate",dateformat.format(date));
         map.put("txtime",timeformat.format(date));
-        map.put("txserial","12345678901234567890");
+        map.put("txserial",orderNo);
         map.put("version","1111111111111111");
         parameters = map.get("txcode") +  map.get("txdate") +  map.get("txtime") +  map.get("txserial") +  map.get("version");
         DecimalFormat df = new DecimalFormat("0");
@@ -271,9 +293,21 @@ public class RechargeActivity extends BaseActivity{
 
         @Override
         public void onResponse(Object object) {
-            if (object != null && object instanceof AccountBalanceResponse) {
+            if(object == null) {
+                return;
+            }
+            if (object instanceof AccountBalanceResponse) {
                 AccountBalanceResponse accountBalanceResponse = (AccountBalanceResponse)object;
                 RechargeActivity.this.mAccountBalanceText.setText(accountBalanceResponse.balance);
+            }
+            if(object instanceof WeChatOrderNoResponse) {
+                WeChatOrderNoResponse weChatOrderNoResponse = (WeChatOrderNoResponse)object;
+                String putin_num = weChatOrderNoResponse.putin_num;
+                RechargeActivity.this.mPutinNum = putin_num;
+                payByWeiXin(putin_num);
+            }
+            if(object instanceof  WeChatRechargeResponse) {
+                Log.i("RechargeActivity","充值成功");
             }
         }
 
@@ -283,10 +317,45 @@ public class RechargeActivity extends BaseActivity{
             CommonUtil.showToast(msg,RechargeActivity.this);
         }
     }
+    @Subscribe
+    public void onEvent(final BaseEvent event) {
+        Log.i("RegularBuyActivity","event = " + event);
+        if(event instanceof FinanceBuyEvent) {
+            FinanceBuyEvent financeBuyEvent = (FinanceBuyEvent)event;
+            String money = financeBuyEvent.money;
+            commitRechargeOrder(money);
+        }
+    }
+    private void commitRechargeOrder(String money) {
+        Intent intent = getIntent();
+        String interest_rate = intent.getStringExtra("interest_rate");
+        String invest_days = intent.getStringExtra("invest_days");
+        String finance_name = intent.getStringExtra("finance_name");
+        String product_id = intent.getStringExtra("product_id");
+        UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
+        String userId = userInfoBean.getCustId();
+        String userPhone = userInfoBean.getCustMobile();
 
+
+        Map<String,Object> map = new HashMap<>();
+        map.put("wechat_type","2");
+        map.put("user_id",userId);
+        map.put("user_phone",userPhone);
+        map.put("interest_rate",interest_rate);
+        map.put("invest_days",invest_days);
+        map.put("finance_name",finance_name);
+        map.put("putin_money",money);
+        map.put("product_id",product_id);
+        map.put("putin_money",this.mPutinNum);
+
+        RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_WECHAT_RECHARGE,map,RechargeActivity.this.mNetWorkCallBack, WeChatRechargeResponse.class);
+    }
     @Override
     public void onDestroy() {
         super.onDestroy();
+        if(EventBus.getDefault().isRegistered(this)) {
+            EventBus.getDefault().unregister(this);
+        }
         sRechargeActivity = null;
     }
 }

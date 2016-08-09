@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,9 +23,13 @@ import butterknife.ButterKnife;
 import cn.yinxun.boshixuan.R;
 import cn.yinxun.boshixuan.bean.UserInfoBean;
 import cn.yinxun.boshixuan.config.Config;
+import cn.yinxun.boshixuan.event.BankSelectEvent;
+import cn.yinxun.boshixuan.event.BaseEvent;
+import cn.yinxun.boshixuan.event.FinanceBuyEvent;
 import cn.yinxun.boshixuan.network.RequestListener;
 import cn.yinxun.boshixuan.network.RequestManager;
 import cn.yinxun.boshixuan.network.model.AccountBalanceResponse;
+import cn.yinxun.boshixuan.network.model.BankDetailModel;
 import cn.yinxun.boshixuan.network.model.RegularBuyResponse;
 import cn.yinxun.boshixuan.util.CommonUtil;
 import cn.yinxun.boshixuan.util.LogUtil;
@@ -54,6 +62,8 @@ public class RegularBuyActivity extends BaseActivity{
     TextView mRegularBuyDay;
     @Bind(R.id.accountBalance)
     TextView mAccountBalance;
+    public String mFinanceName;
+    public String mProductId;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,6 +90,8 @@ public class RegularBuyActivity extends BaseActivity{
         String interestRate = intent.getStringExtra("interestRate");
         String investDay = intent.getStringExtra("investDay");
         String investMoney = intent.getStringExtra("investMoney");
+        mFinanceName = intent.getStringExtra("productName");
+        mProductId = intent.getStringExtra("productId");
         this.mRegularBuyDay.setText(investDay);
         this.mRegularBuyMin.setText(investMoney);
         this.mRegularYearIncome.setText(interestRate);
@@ -162,6 +174,10 @@ public class RegularBuyActivity extends BaseActivity{
                         public void onClick(DialogInterface dialog, int which) {
                             dialog.dismiss();
                             Intent intent = new Intent(RegularBuyActivity.this,RechargeActivity.class);
+                            intent.putExtra("interest_rate",RegularBuyActivity.this.mRegularYearIncome.getText().toString());
+                            intent.putExtra("invest_days",RegularBuyActivity.this.mRegularBuyDay.getText().toString());
+                            intent.putExtra("finance_name",RegularBuyActivity.this.mFinanceName);
+                            intent.putExtra("product_id",RegularBuyActivity.this.mProductId);
                             startActivity(intent);
                         }
                     });

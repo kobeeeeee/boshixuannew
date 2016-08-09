@@ -60,4 +60,6 @@ public class Config {
     public static String BSX_PUT_IN_LIST= "putinlist";
     //提现记录
     public static String BSX_FETCH_CASH_LIST = "fetchcashlist";
+    //获取订单号
+    public static String BSX_WECHAT_RECHARGE = "wechatrecharge";
 }

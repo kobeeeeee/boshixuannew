@@ -73,10 +73,11 @@ public class SelectBankAdapter extends BaseAdapter{
             for(int i=0;i<length-8;i++) {
                 cardNumber = cardNumber + "*";
             }
-            cardNumber = cardNumber + model.card_number.substring(length-5,length-1);
+            cardNumber = cardNumber + model.card_number.substring(length-4,length);
         }
         holder.bankName.setText(model.bank_name);
         holder.bankNo.setText(cardNumber);
+        model.card_number = cardNumber;
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

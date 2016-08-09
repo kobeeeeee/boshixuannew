@@ -19,6 +19,8 @@ import com.tencent.mm.sdk.openapi.IWXAPI;
 import com.tencent.mm.sdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.sdk.openapi.WXAPIFactory;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
@@ -33,6 +35,7 @@ import cn.yinxun.boshixuan.R;
 import cn.yinxun.boshixuan.activity.RechargeActivity;
 import cn.yinxun.boshixuan.bean.UserInfoBean;
 import cn.yinxun.boshixuan.config.Config;
+import cn.yinxun.boshixuan.event.FinanceBuyEvent;
 import cn.yinxun.boshixuan.util.CommonUtil;
 import cn.yinxun.boshixuan.util.Constants;
 import cn.yinxun.boshixuan.util.LogUtil;
@@ -58,6 +61,9 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
             switch (code){
                 case "SUCCESS":
                     message = "支付成功";
+                    JSONObject json = RechargeActivity.sRechargeActivity.mJSONObject;
+                    String total_fee = json.getString("total_fee");
+                    EventBus.getDefault().post(new FinanceBuyEvent(total_fee));
                     break;
                 case "REFUND":
                     message = "转入退款";
@@ -171,11 +177,11 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
         String parameters="";
         Map<String,String> map = new HashMap<>();
         map.put("txcode","YXC001");
-        SimpleDateFormat dateformat = new SimpleDateFormat("yyyyMMdd");
-        SimpleDateFormat timeformat = new SimpleDateFormat("HHmmss");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HHmmss");
         Date date = new Date();
-        map.put("txdate",dateformat.format(date));
-        map.put("txtime",timeformat.format(date));
+        map.put("txdate",dateFormat.format(date));
+        map.put("txtime",timeFormat.format(date));
         map.put("txserial","12345678901234567890");
         map.put("version","1111111111111111");
         parameters = map.get("txcode") +  map.get("txdate") +  map.get("txtime") +  map.get("txserial") +  map.get("version");
