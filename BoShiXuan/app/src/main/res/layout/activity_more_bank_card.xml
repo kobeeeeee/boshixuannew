@@ -2,29 +2,30 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@color/white">
-
+    <include layout="@layout/layout_title_bar"
+        android:id="@+id/include11" />
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <include layout="@layout/layout_title_bar"
-            android:id="@+id/include11" />
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_centerHorizontal="true">
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginTop="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:layout_marginTop="3dp"
             android:background="@drawable/recharge_bg1"
-            android:layout_below="@+id/include11"
             android:layout_centerHorizontal="true"
             android:id="@+id/relativeLayout7">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="门店现金充值"
+                android:text="门店充值地址（现金/刷卡）"
                 android:id="@+id/textView45"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="7.5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="6.5dp"
                 android:textSize="16sp"
                 android:textColor="@color/wallet_black"
                 android:layout_alignParentTop="true"
@@ -34,67 +35,45 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="温岭市万昌中路创业大厦一幢1315号"
-                android:layout_marginTop="7.5dp"
+                android:text="温岭市万昌中路创业大厦1幢1315号(旗舰店)"
+                android:layout_marginTop="6.5dp"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
                 android:id="@+id/textView46"
                 android:layout_below="@+id/textView45"
                 android:layout_alignLeft="@+id/textView45"
                 android:layout_alignStart="@+id/textView45" />
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="55dp"
-            android:layout_marginTop="4.5dp"
-            android:background="@drawable/recharge_bg2"
-            android:layout_below="@+id/relativeLayout7"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/relativeLayout8">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="门店刷卡充值"
-                android:id="@+id/textView47"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="7.5dp"
-                android:textSize="16sp"
-                android:textColor="@color/wallet_black"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="温岭市万昌中路创业大厦一幢1315号"
-                android:layout_marginTop="7.5dp"
+                android:text="温岭市万泉东路209号（锦园店）"
+                android:layout_marginTop="6.5dp"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
-                android:id="@+id/textView48"
-                android:layout_below="@+id/textView47"
-                android:layout_alignLeft="@+id/textView47"
-                android:layout_alignStart="@+id/textView47" />
+                android:id="@+id/textView69"
+                android:layout_below="@+id/textView46"
+                android:layout_alignLeft="@+id/textView46"
+                android:layout_alignStart="@+id/textView46" />
+
         </RelativeLayout>
 
         <RelativeLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4.5dp"
+            android:layout_width="match_parent"
+            android:layout_height="122.5dp"
+            android:layout_marginTop="2.5dp"
             android:background="@drawable/recharge_bg3"
-            android:layout_below="@+id/relativeLayout8"
+            android:layout_below="@+id/relativeLayout7"
             android:layout_centerHorizontal="true"
             android:id="@+id/relativeLayout9">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="门店刷卡充值"
+                android:text="银行卡转账充值"
                 android:id="@+id/textView49"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="14dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10.5dp"
                 android:textSize="16sp"
                 android:textColor="@color/wallet_black"
                 android:layout_alignParentTop="true"
@@ -106,7 +85,7 @@
                 android:layout_height="wrap_content"
                 android:text="银行卡号 ： 6222081207002022330"
                 android:id="@+id/textView50"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
                 android:layout_below="@+id/textView49"
@@ -118,7 +97,7 @@
                 android:layout_height="wrap_content"
                 android:text="账户名 ： 沈海永"
                 android:id="@+id/textView51"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
                 android:layout_below="@+id/textView50"
@@ -130,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:text="开户行 ： 工商银行温岭支行"
                 android:id="@+id/textView52"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
                 android:layout_below="@+id/textView51"
@@ -139,9 +118,8 @@
         </RelativeLayout>
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="12dp"
-            android:layout_marginTop="4.5dp"
+            android:layout_height="122.5dp"
+            android:layout_marginTop="2.5dp"
             android:background="@drawable/recharge_bg3"
             android:layout_below="@+id/relativeLayout9"
             android:layout_centerHorizontal="true"
@@ -151,10 +129,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="银行卡转账充值"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10.5dp"
                 android:textColor="@color/wallet_black"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:id="@+id/textView54"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -166,7 +144,7 @@
                 android:text="银行卡号：6221410006139878"
                 android:textSize="14sp"
                 android:textColor="@color/bank_add_gray"
-                android:layout_marginTop="13.5dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView55"
                 android:layout_below="@+id/textView54"
                 android:layout_alignLeft="@+id/textView54"
@@ -178,7 +156,7 @@
                 android:text="账号名：沈海永"
                 android:textColor="@color/bank_add_gray"
                 android:textSize="14sp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView56"
                 android:layout_below="@+id/textView55"
                 android:layout_alignLeft="@+id/textView55"
@@ -190,7 +168,7 @@
                 android:text="开户行：泰隆银行台州温岭支行"
                 android:textColor="@color/bank_add_gray"
                 android:textSize="14sp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView57"
                 android:layout_below="@+id/textView56"
                 android:layout_alignLeft="@+id/textView56"
@@ -200,21 +178,20 @@
         <RelativeLayout
             android:id="@+id/relativeLayout11"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="122.5dp"
             android:background="@drawable/recharge_bg3"
             android:layout_below="@+id/relativeLayout10"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="4.5dp"
-            android:layout_marginLeft="12dp">
+            android:layout_marginTop="2.5dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="银行卡转账充值（对公账户）"
                 android:textColor="@color/wallet_black"
-                android:textSize="15sp"
+                android:textSize="16sp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="10.5dp"
                 android:id="@+id/textView58"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -224,7 +201,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="银行卡号：3301150120100027854"
-                android:layout_marginTop="13.5dp"
+                android:layout_marginTop="10dp"
                 android:textColor="@color/bank_add_gray"
                 android:textSize="14sp"
                 android:id="@+id/textView59"
@@ -238,7 +215,7 @@
                 android:text="账号名：浙江博时轩供应链管理有限公司"
                 android:textColor="@color/bank_add_gray"
                 android:textSize="14sp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView60"
                 android:layout_below="@+id/textView59"
                 android:layout_alignLeft="@+id/textView59"
@@ -250,7 +227,7 @@
                 android:text="开户行：泰隆银行台州温岭支行"
                 android:textColor="@color/bank_add_gray"
                 android:textSize="14sp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/textView61"
                 android:layout_below="@+id/textView60"
                 android:layout_alignLeft="@+id/textView60"
@@ -261,8 +238,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="注 ： 银行转账后请与400客服联系，客服核对充值金额后立即到账，客服热线 ： 400-8597-333"
-            android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
             android:textSize="13sp"
             android:textColor="@color/recharge_red"
             android:id="@+id/textView53"
@@ -270,6 +247,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_marginTop="10dp" />
+            android:layout_marginTop="8dp" />
     </RelativeLayout>
 </LinearLayout>
