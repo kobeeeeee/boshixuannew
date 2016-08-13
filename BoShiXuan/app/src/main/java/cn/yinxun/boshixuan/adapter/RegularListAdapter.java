@@ -48,7 +48,15 @@ public class RegularListAdapter extends RecyclerView.Adapter<RegularListAdapter.
         holder.mRegularProductDay.setText(this.mRegularDetailModelList.get(position).invest_days + "天");
         holder.mRegularProductMin.setText(this.mRegularDetailModelList.get(position).invest_money + "元起投");
         holder.mRegularDesc.setText(this.mRegularDetailModelList.get(position).product_desc);
-        Picasso.with(this.mContext).load(Config.ROOT_URL + this.mRegularDetailModelList.get(position).finance_img).error(this.mContext.getResources().getDrawable(R.drawable.regular_default_image)).into(holder.mRegularImage);
+        Picasso.with(this.mContext).load(Config.ROOT_URL + this.mRegularDetailModelList.get(position).finance_img)
+                .error(this.mContext.getResources().getDrawable(R.drawable.regular_default_image)).into(holder.mRegularStateImage);
+        int src = 0;
+        if(this.mRegularDetailModelList.get(position).is_expire.equals("1")) {
+            src = R.drawable.regular_buy_button;
+        } else {
+            src = R.drawable.regular_expire;
+        }
+        Picasso.with(this.mContext).load(src).into(holder.mRegularStateImage);
     }
     @Override
     public long getItemId(int position) {
@@ -73,6 +81,8 @@ public class RegularListAdapter extends RecyclerView.Adapter<RegularListAdapter.
         TextView mRegularDesc;
         @Bind(R.id.regularImage)
         ImageView mRegularImage;
+        @Bind(R.id.regularStateImage)
+        ImageView mRegularStateImage;
         @OnClick(R.id.regularLayout)
         public void OnClick(View view) {
             UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
@@ -83,6 +93,10 @@ public class RegularListAdapter extends RecyclerView.Adapter<RegularListAdapter.
             }
             int position = getLayoutPosition() - 1;
             RegularDetailModel regularDetailModel = RegularListAdapter.this.mRegularDetailModelList.get(position);
+            if(!regularDetailModel.is_expire.equals("1")) {
+                CommonUtil.showToast("该产品已过期，请购买其他产品",RegularListAdapter.this.mContext);
+                return;
+            }
             Intent intent = new Intent(RegularListAdapter.this.mContext, RegularBuyActivity.class);
             intent.putExtra("productId",regularDetailModel.product_id);
             intent.putExtra("productName",regularDetailModel.finance_name);

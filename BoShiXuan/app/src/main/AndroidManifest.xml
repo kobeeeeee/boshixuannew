@@ -109,7 +109,7 @@
         android:windowSoftInputMode="stateHidden|adjustResize"/>
         <activity
             android:name="cn.yinxun.boshixuan.wxapi.WXPayEntryActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait" />

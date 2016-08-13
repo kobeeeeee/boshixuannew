@@ -110,7 +110,7 @@ public class WithdrawActivity extends BaseActivity {
         final String cardNumber = this.mBankNo.getText().toString();
         final String bankNumber = this.mBankName.getText().toString();
         if(TextUtils.isEmpty(cardNumber)) {
-            CommonUtil.showToast("请选择银行卡",WithdrawActivity.this);
+            CommonUtil.showToast("请选择提现银行卡",WithdrawActivity.this);
             return;
         }
         if(TextUtils.isEmpty(fetchMoney)) {

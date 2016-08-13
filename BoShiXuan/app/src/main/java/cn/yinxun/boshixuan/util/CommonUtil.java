@@ -5,6 +5,8 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.text.TextUtils;
 import android.util.Xml;
 import android.view.Gravity;
@@ -19,6 +21,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -135,7 +138,6 @@ public class CommonUtil {
         map.put("sysType",userInfoBean.getSysType());
         map.put("sysVersion",userInfoBean.getSysVersion());
         map.put("appVersion",userInfoBean.getAppVersion());
-        map.put("sysTerNo",userInfoBean.getSysTerNo());
         if(!TextUtils.isEmpty(userInfoBean.getCustId())) {
             map.put("user_id",userInfoBean.getCustId());
         }
@@ -159,10 +161,15 @@ public class CommonUtil {
     }
 
     public static  boolean checkPassword(String password){
-        Pattern pattern = Pattern.compile(".*[a-zA-Z].*[0-9]|.*[0-9].*[a-zA-Z]");
-        //Pattern pattern = Pattern.compile("^[A-Za-z0-9]{6,20}$");
-        Matcher matcher = pattern.matcher(password);
-        return matcher.matches();
+//        Pattern pattern = Pattern.compile(".*[a-zA-Z].*[0-9]|.*[0-9].*[a-zA-Z]");
+//        //Pattern pattern = Pattern.compile("^[A-Za-z0-9]{6,20}$");
+//        Matcher matcher = pattern.matcher(password);
+//        return matcher.matches();
+        if(password.length() >= 6) {
+            return true;
+        } else {
+            return false;
+        }
     }
     public static String formatTime(String time) {
         long longTime = Long.valueOf(time);
@@ -239,5 +246,25 @@ public class CommonUtil {
             }
         });
         builder.create().show();
+    }
+
+    /**
+     * 判断微信是否已安装
+     * @param context
+     * @return
+     */
+    public static boolean isWeiXinAvailable(Context context) {
+        final PackageManager packageManager = context.getPackageManager();// 获取packagemanager
+        List<PackageInfo> pinfo = packageManager.getInstalledPackages(0);// 获取所有已安装程序的包信息
+        if (pinfo != null) {
+            for (int i = 0; i < pinfo.size(); i++) {
+                String pn = pinfo.get(i).packageName;
+                if (pn.equals("com.tencent.mm")) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

@@ -55,9 +55,16 @@ public class RequestManager {
     private KeyValuePair prepareParams(String action, Map<String, String> map) {
          map = CommonUtil.putBaseFieldIntoMap(map);
         JSONObject jsonObject = CommonUtil.pullMapToJson(action, map);
-        JSONObject obj = new JSONObject();
-        obj.put("REQ_BODY",jsonObject);
-        String objString = obj.toJSONString();
+
+        String objString = jsonObject.toJSONString();
+        String sign = CommonUtil.md5(objString + "123456");
+        JSONObject headJson = new JSONObject();
+        headJson.put("SIGN",sign);
+
+//        JSONObject formatJson = new JSONObject();
+//        formatJson.put("REQ_HEAD",headJson);
+//        formatJson.put("REQ_BODY",jsonObject);
+        objString = "{\"REQ_BODY\":" + jsonObject.toJSONString() + ",\"REQ_HEAD\":" + headJson.toJSONString() + "}";
         KeyValuePair keyValuePair = new KeyValuePair("REQ_MESSAGE",objString);
         return keyValuePair;
     }

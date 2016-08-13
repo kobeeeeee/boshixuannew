@@ -61,9 +61,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
             switch (code){
                 case "SUCCESS":
                     message = "支付成功";
-                    JSONObject json = RechargeActivity.sRechargeActivity.mJSONObject;
-                    String total_fee = json.getString("total_fee");
-                    EventBus.getDefault().post(new FinanceBuyEvent(total_fee));
+                    EventBus.getDefault().post(new FinanceBuyEvent());
                     break;
                 case "REFUND":
                     message = "转入退款";
@@ -97,20 +95,7 @@ public class WXPayEntryActivity extends Activity implements IWXAPIEventHandler{
                     WXPayEntryActivity.this.finish();
                 }
             });
-            builder.setOnKeyListener(new DialogInterface.OnKeyListener() {
-                @Override
-                public boolean onKey(DialogInterface dialog, int keyCode, KeyEvent event)
-                {
-                    if (keyCode == KeyEvent.KEYCODE_SEARCH)
-                    {
-                        return true;
-                    }
-                    else
-                    {
-                        return false; //默认返回 false，这里false不能屏蔽返回键，改成true就可以了
-                    }
-                }
-            });
+            builder.setCancelable(false);
             builder.create().show();
         }
     };

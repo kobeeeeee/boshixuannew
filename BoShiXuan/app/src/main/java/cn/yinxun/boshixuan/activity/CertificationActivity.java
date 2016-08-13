@@ -75,16 +75,16 @@ public class CertificationActivity extends BaseActivity{
         String identity = this.mIdentityText.getText().toString();
         UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
         String name = userInfoBean.getUserName();
-        if(TextUtils.isEmpty(realName)) {
-            CommonUtil.showToast("请输入真实姓名",CertificationActivity.this);
-            return;
-        }
         if(TextUtils.isEmpty(identity)) {
             CommonUtil.showToast("请输入身份证号码",CertificationActivity.this);
             return;
         }
         if(identity.length() != 18) {
-            CommonUtil.showToast("身份证号码输入不正确",CertificationActivity.this);
+            CommonUtil.showToast("身份证号码格式不正确",CertificationActivity.this);
+            return;
+        }
+        if(TextUtils.isEmpty(realName)) {
+            CommonUtil.showToast("请输入证件姓名",CertificationActivity.this);
             return;
         }
         if(TextUtils.isEmpty(payPsw)) {
@@ -93,7 +93,7 @@ public class CertificationActivity extends BaseActivity{
         }
         boolean result=payPsw.matches("[0-9]+");
         if(!result || payPsw.length() != 6) {
-            CommonUtil.showToast("请输入六位纯数字密码",CertificationActivity.this);
+            CommonUtil.showToast("密码长度为6位有效数字",CertificationActivity.this);
             return;
         }
         String userId = userInfoBean.getCustId();

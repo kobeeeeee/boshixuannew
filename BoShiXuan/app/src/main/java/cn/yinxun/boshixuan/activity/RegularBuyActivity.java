@@ -6,11 +6,13 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
@@ -178,16 +180,42 @@ public class RegularBuyActivity extends BaseActivity{
                             intent.putExtra("invest_days",RegularBuyActivity.this.mRegularBuyDay.getText().toString());
                             intent.putExtra("finance_name",RegularBuyActivity.this.mFinanceName);
                             intent.putExtra("product_id",RegularBuyActivity.this.mProductId);
+                            intent.putExtra("invest_money",RegularBuyActivity.this.mRegularBuyMin.getText().toString());
                             startActivity(intent);
                         }
                     });
                     builder.create().show();
                     return;
                 }
+                if(Float.valueOf(inputNumber) < Float.valueOf(RegularBuyActivity.this.mRegularBuyMin.getText().toString())) {
+                    CommonUtil.showToast("最低起投金额为" + RegularBuyActivity.this.mRegularBuyMin.getText().toString(),RegularBuyActivity.this);
+                    return;
+                }
+                if(inputNumber.contains(".")) {
+                    CommonUtil.showToast("购买金额为10的倍数",RegularBuyActivity.this);
+                    return;
+                }
+                if(!inputNumber.contains(".") && Integer.valueOf(inputNumber)%10 != 0) {
+                    CommonUtil.showToast("购买金额为10的倍数",RegularBuyActivity.this);
+                    return;
+                }
                 confirmBuy();
             }
         });
     }
+    @Override
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        switch(event.getKeyCode())
+        {
+            case KeyEvent.KEYCODE_BACK:
+                Toast.makeText(getBaseContext(), "点击了back", Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+        return super.dispatchKeyEvent(event);
+    }
+
     private void confirmBuy() {
         final PaypswDialog dialog = new PaypswDialog(this);
         dialog.setOnNegativeListener(new View.OnClickListener() {

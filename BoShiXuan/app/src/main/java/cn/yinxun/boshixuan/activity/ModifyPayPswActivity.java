@@ -86,11 +86,11 @@ public class ModifyPayPswActivity extends BaseActivity{
                     return;
                 }
                 if(TextUtils.isEmpty(confirmPassword)) {
-                    CommonUtil.showToast("请输入确认密码",ModifyPayPswActivity.this);
+                    CommonUtil.showToast("请确认新密码",ModifyPayPswActivity.this);
                     return;
                 }
                 if(!newPsw.equals(confirmPassword)){
-                    CommonUtil.showToast("两次输入密码不一致",ModifyPayPswActivity.this);
+                    CommonUtil.showToast("两次输入不一致",ModifyPayPswActivity.this);
                     return;
                 }
                 boolean result=confirmPassword.matches("[0-9]+");

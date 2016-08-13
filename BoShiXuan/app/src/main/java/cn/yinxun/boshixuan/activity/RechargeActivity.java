@@ -157,6 +157,15 @@ public class RechargeActivity extends BaseActivity{
                     CommonUtil.showToast("请输入金额",RechargeActivity.this);
                     return;
                 }
+//                String invest_money = getIntent().getStringExtra("invest_money");
+//                if(Float.valueOf(inputMoney) < Float.valueOf(invest_money)) {
+//                    CommonUtil.showToast("充值金额须大于起投金额",RechargeActivity.this);
+//                    return;
+//                }
+                if(!CommonUtil.isWeiXinAvailable(RechargeActivity.this)) {
+                    CommonUtil.showToast("您未安装微信",RechargeActivity.this);
+                    return;
+                }
                 switch (RechargeActivity.this.mPosition){
                     case TYPE_WEIXIN_PAY:
                        getOrderNo();
@@ -321,8 +330,7 @@ public class RechargeActivity extends BaseActivity{
     public void onEvent(final BaseEvent event) {
         Log.i("RegularBuyActivity","event = " + event);
         if(event instanceof FinanceBuyEvent) {
-            FinanceBuyEvent financeBuyEvent = (FinanceBuyEvent)event;
-            String money = financeBuyEvent.money;
+            String money = this.mInputMoneyText.getText().toString();
             commitRechargeOrder(money);
         }
     }
@@ -336,17 +344,20 @@ public class RechargeActivity extends BaseActivity{
         String userId = userInfoBean.getCustId();
         String userPhone = userInfoBean.getCustMobile();
 
-
+        String rate = interest_rate.substring(0,interest_rate.length() - 1);
+        BigDecimal rateBigDecimal = new BigDecimal(rate).setScale(2,BigDecimal.ROUND_HALF_UP);
         Map<String,Object> map = new HashMap<>();
         map.put("wechat_type","2");
         map.put("user_id",userId);
         map.put("user_phone",userPhone);
-        map.put("interest_rate",interest_rate);
-        map.put("invest_days",invest_days);
+        map.put("interest_rate",String.valueOf(rateBigDecimal));
+        map.put("invest_days",invest_days.substring(0,invest_days.length() - 1));
         map.put("finance_name",finance_name);
         map.put("putin_money",money);
         map.put("product_id",product_id);
-        map.put("putin_money",this.mPutinNum);
+        map.put("putin_num",this.mPutinNum);
+        LogUtil.i(this,"putin_money = " + money);
+        LogUtil.i(this,"putin_num = " + this.mPutinNum);
 
         RequestManager.getInstance().post(Config.URL + Config.SLASH, Config.BSX_WECHAT_RECHARGE,map,RechargeActivity.this.mNetWorkCallBack, WeChatRechargeResponse.class);
     }

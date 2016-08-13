@@ -80,8 +80,15 @@ public class ProductDetailActivity extends BaseActivity{
         this.mCommitOrder.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
+                String userId = userInfoBean.getCustId();
+                String userPhone = userInfoBean.getCustMobile();
                 final String depositPrice = ProductDetailActivity.this.mDepositText.getText().toString();
                 final String rentPrice = ProductDetailActivity.this.mDayRentText.getText().toString();
+                if(!userInfoBean.getIsVerity().equals("2")) {
+                    CommonUtil.showToast("尚未实名认证",ProductDetailActivity.this);
+                    return;
+                }
 
                 if(TextUtils.isEmpty(depositPrice)) {
                     CommonUtil.showToast("请输入押金",ProductDetailActivity.this);
@@ -92,9 +99,11 @@ public class ProductDetailActivity extends BaseActivity{
                     CommonUtil.showToast("请输入日租金",ProductDetailActivity.this);
                     return;
                 }
-                UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
-                String userId = userInfoBean.getCustId();
-                String userPhone = userInfoBean.getCustMobile();
+
+                if(Float.valueOf(depositPrice) > Float.valueOf(rentPrice)) {
+                    CommonUtil.showToast("押金不能大于日租金",ProductDetailActivity.this);
+                    return;
+                }
                 //传入参数
                 Map<String,Object> map = new HashMap<>();
                 map.put("user_id",userId);

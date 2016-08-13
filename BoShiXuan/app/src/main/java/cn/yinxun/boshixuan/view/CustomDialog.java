@@ -37,6 +37,7 @@ public class CustomDialog extends Dialog {
         private DialogInterface.OnClickListener positiveButtonClickListener;
         private DialogInterface.OnClickListener negativeButtonClickListener;
         private DialogInterface.OnKeyListener keyCliCkListener;
+        private boolean mIsCancel;
 
         public Builder(Context context) {
             this.context = context;
@@ -125,6 +126,10 @@ public class CustomDialog extends Dialog {
             this.keyCliCkListener = listener;
             return this;
         };
+        public Builder setCancelable(boolean isCancel){
+            this.mIsCancel = isCancel;
+            return this;
+        }
         public CustomDialog create() {
             LayoutInflater inflater = (LayoutInflater) context
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -175,6 +180,7 @@ public class CustomDialog extends Dialog {
             if(keyCliCkListener != null) {
                 this.setOnKeyListener(keyCliCkListener);
             }
+            dialog.setCancelable(this.mIsCancel);
             // set the content message
             if (message != null) {
                 ((TextView) layout.findViewById(R.id.message)).setText(message);

@@ -20,6 +20,8 @@ public class RegularDetailModel {
     public String product_desc;
     //理财产品ID
     public String product_id;
-    //A 可购买，B已下线
-    public String state;
+    //1 可购买，2已下线
+    public String is_expire;
+
+
 }

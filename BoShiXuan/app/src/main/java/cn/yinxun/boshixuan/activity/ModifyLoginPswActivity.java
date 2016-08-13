@@ -82,18 +82,22 @@ public class ModifyLoginPswActivity extends BaseActivity{
                     CommonUtil.showToast("请输入新密码",ModifyLoginPswActivity.this);
                     return;
                 }
+                if(!CommonUtil.checkPassword(newPsw)){
+                    CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",ModifyLoginPswActivity.this);
+                    return;
+                }
                 if(TextUtils.isEmpty(confirmPassword)) {
-                    CommonUtil.showToast("请输入确认密码",ModifyLoginPswActivity.this);
+                    CommonUtil.showToast("请确认新密码",ModifyLoginPswActivity.this);
+                    return;
+                }
+                if(oldPsw.equals(newPsw)) {
+                    CommonUtil.showToast("原密码与新密码一致",ModifyLoginPswActivity.this);
                     return;
                 }
                 if(!newPsw.equals(confirmPassword)){
-                    CommonUtil.showToast("两次输入密码不一致",ModifyLoginPswActivity.this);
+                    CommonUtil.showToast("两次输入不一致",ModifyLoginPswActivity.this);
                     return;
                 }
-//                if(!CommonUtil.checkPassword(confirmPassword)){
-//                    CommonUtil.showToast("密码长度为6-20位字母或有效数字组成",ModifyLoginPswActivity.this);
-//                    return;
-//                }
 
                 String phoneNo = userInfoBean.getCustMobile();
                 //传入参数

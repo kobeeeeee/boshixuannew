@@ -98,11 +98,24 @@ public class BankCardAddActivity extends BaseActivity{
         this.mNetWorkCallBack = new NetWorkCallBack();
         UserInfoBean userInfoBean = UserInfoBean.getUserInfoBeanInstance();
         String userId = userInfoBean.getCustId();
+        String name = userInfoBean.getUserName();
         String bankNo = this.mBankNo.getText().toString();
         String bankName = this.mBankName.getText().toString();
         String userName = this.mUserName.getText().toString();
         if(bankNo.length() == 0) {
+            CommonUtil.showToast("请输入银行卡号",BankCardAddActivity.this);
+            return;
+        }
+        if(bankName.length() == 0) {
+            CommonUtil.showToast("请输入银行名称",BankCardAddActivity.this);
+            return;
+        }
+        if(bankNo.length() < 16) {
             CommonUtil.showToast("请输入正确的银行卡号",BankCardAddActivity.this);
+            return;
+        }
+        if(name.equals("未认证")) {
+            CommonUtil.showToast("请先实名认证",BankCardAddActivity.this);
             return;
         }
         //传入参数
